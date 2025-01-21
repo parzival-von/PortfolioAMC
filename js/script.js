@@ -35,29 +35,3 @@ contactForm.addEventListener('submit', event => {
     alert('¡Gracias por tu mensaje! Me pondré en contacto contigo pronto.');
     contactForm.reset();
 });
-
-// Configuración del círculo y sus elementos
-const items = document.querySelectorAll('.circle-item');
-const radius = 250; // Ajusta la distancia desde el centro al modelo 3D
-let scrollPosition = 0;
-
-// Posicionar los elementos en círculo
-function positionItems() {
-    const totalItems = items.length;
-    items.forEach((item, index) => {
-        const angle = (index * (360 / totalItems)) + scrollPosition;
-        const x = radius * Math.cos((angle * Math.PI) / 180);
-        const y = radius * Math.sin((angle * Math.PI) / 180);
-        item.style.transform = `translate(${x}px, ${y}px)`; // Ajusta la posición en relación con el modelo
-    });
-}
-
-// Escuchar el evento de desplazamiento
-window.addEventListener('wheel', (event) => {
-    event.preventDefault();
-    scrollPosition += event.deltaY * 0.1; // Ajusta la sensibilidad del scroll
-    positionItems();
-}, { passive: false });
-
-// Inicializa las posiciones al cargar
-positionItems();

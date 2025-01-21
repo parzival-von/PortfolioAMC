@@ -10,7 +10,6 @@ body {
     font-family: Arial, sans-serif;
     color: #fff;
     background: linear-gradient(to bottom, #222, #000); /* Fondo degradado */
-    overflow: hidden; /* Evita scroll innecesario */
 }
 
 /* Barra de navegación */
@@ -64,7 +63,7 @@ body {
     top: 50%; /* Centra verticalmente */
     transform: translateY(-50%);
     text-align: left;
-    z-index: 2; /* Asegura que esté por encima del fondo */
+    z-index: 2;
 }
 
 .hero h1 {
@@ -77,28 +76,14 @@ body {
     color: #ccc;
 }
 
-/* Círculo de proyectos */
-.circle-container {
-    position: relative;
-    width: 500px; /* Tamaño del área donde se distribuyen los proyectos */
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: none; /* Fondo transparente */
-    border-radius: 50%; /* Puede mantenerse para el posicionamiento circular */
-    overflow: visible; /* Permite que los elementos se posicionen fuera del contenedor */
-}
-
-
 /* Modelo 3D */
 .central-item {
     position: absolute;
     top: 50%; /* Centra verticalmente */
     left: 50%; /* Centra horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta para que el centro sea el modelo */
-    width: 200px; /* Ajusta según el tamaño del modelo */
-    height: 200px;
+    transform: translate(-50%, -50%); /* El centro sea el modelo */
+    width: 600px; /* Tamaño del modelo */
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,28 +96,3 @@ model-viewer {
     background-color: transparent;
 }
 
-/* Elementos alrededor del círculo */
-.circle {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.circle-item {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background: red;
-    color: white;
-    text-align: center;
-    line-height: 50px;
-    border-radius: 50%;
-    font-size: 14px;
-    font-weight: bold;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.circle-item:hover {
-    transform: scale(1.2); /* Aumenta ligeramente al pasar el ratón */
-    background-color: #ff4500; /* Cambia el color al pasar el ratón */
-}
