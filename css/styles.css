@@ -1,0 +1,138 @@
+/* Reinicio de márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: linear-gradient(to bottom, #222, #000); /* Fondo degradado */
+    overflow: hidden; /* Evita scroll innecesario */
+}
+
+/* Barra de navegación */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #111;
+    padding: 10px 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff6347;
+}
+
+/* Sección de proyectos */
+.projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    padding: 0; 
+    position: relative;
+}
+
+/* Nombre y descripción */
+.hero {
+    position: absolute;
+    left: 50px; /* Alineado desde la izquierda */
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%);
+    text-align: left;
+    z-index: 2; /* Asegura que esté por encima del fondo */
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.5em;
+    color: #ccc;
+}
+
+/* Círculo de proyectos */
+.circle-container {
+    position: relative;
+    width: 500px; /* Tamaño del área donde se distribuyen los proyectos */
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none; /* Fondo transparente */
+    border-radius: 50%; /* Puede mantenerse para el posicionamiento circular */
+    overflow: visible; /* Permite que los elementos se posicionen fuera del contenedor */
+}
+
+
+/* Modelo 3D */
+.central-item {
+    position: absolute;
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta para que el centro sea el modelo */
+    width: 200px; /* Ajusta según el tamaño del modelo */
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+model-viewer {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+/* Elementos alrededor del círculo */
+.circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.circle-item {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: red;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.circle-item:hover {
+    transform: scale(1.2); /* Aumenta ligeramente al pasar el ratón */
+    background-color: #ff4500; /* Cambia el color al pasar el ratón */
+}
