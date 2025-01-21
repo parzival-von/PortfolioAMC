@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
 </head>
+
 <body>
     <header class="main-header">
         <nav class="navbar">
@@ -22,59 +24,62 @@
     </header>
 
     <section id="proyectos" class="projects">
-    <!-- Nombre y descripción -->
-    <div class="hero">
-        <h1>Asier <br>Martínez <br>Corona</h1>
-    </div>
+        <!-- Nombre y descripción -->
+        <div class="hero">
+            <h1>Asier <br>Martínez <br>Corona</h1>
+        </div>
 
-    <!-- Círculo de proyectos -->
-    <div class="circle-container">
-    <div class="central-item">
-        <!-- Objeto 3D -->
-        <model-viewer 
-    src="3dModel/ImageToStl.com_man_bust.glb"
-    ar 
-    ar-modes="webxr scene-viewer quick-look"
-    camera-controls 
-    touch-action="pan-y"
-    camera-orbit="calc(-1rad - env(window-scroll-y) * 2rad) calc(100deg - env(window-scroll-y) * 90deg) calc(0m + env(window-scroll-y) * 5m)"
-    tone-mapping="neutral" 
-    poster="poster.webp" 
-    shadow-intensity="1.09" 
-    exposure="0.55"
-    style="width: 100%; height: 100%;">
-
-    
-    <!-- Hotspot interactivo -->
-    <button class="Hotspot" slot="hotspot-1" data-position="150.53739416995688m -177.68204762437648m -30.326335874960932m" data-normal="0.0803613163666972m 0.6253059474945272m 0.7762309777764499m" data-visibility-attribute="visible">
-        <div class="HotspotAnnotation">Idiomas</div>
-    </button>
-
-    <!-- Barra de progreso -->
-    <div class="progress-bar hide" slot="progress-bar">
-        <div class="update-bar"></div>
-    </div>
-
-    <!-- Botón para Realidad Aumentada -->
-    <button slot="ar-button" id="ar-button">
-        View in your space
-    </button>
-
-    <!-- Prompt para AR -->
-    <div id="ar-prompt">
-        <img src="https://modelviewer.dev/shared-assets/icons/hand.png" alt="Move icon">
-    </div>
-</model-viewer>
-
-    </div>
-    
-</div>
-
-</section>
+        <!-- Círculo de proyectos -->
+        <div class="circle-container">
+            <div class="central-item">
+                <!-- Objeto 3D -->
+                <model-viewer src="3dModel/ImageToStl.com_man_bust.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" camera-orbit="calc(-1rad - env(window-scroll-y) * 2rad) calc(100deg - env(window-scroll-y) * 90deg) calc(0m + env(window-scroll-y) * 5m)" tone-mapping="neutral" poster="poster.webp" shadow-intensity="1.09" exposure="0.55" style="width: 100%; height: 100%;">
 
 
+                    <!-- Hotspot interactivo -->
+                    <button class="Hotspot" slot="hotspot-1" data-position="-112.990048157406m -199.89260252554354m -50.884552195950164m" data-normal="-0.4768643542683944m 0.5906514653696746m 0.6509464141423956m" data-visibility-attribute="visible">
 
-<!--
+                        <div class="HotspotAnnotation">Estudios</div>
+                    </button><button class="Hotspot" slot="hotspot-2" data-position="32.86137497388361m -199.5562128941963m -21.712772642334812m" data-normal="-0.2449542621881159m 0.5242928111667506m 0.8155454969495828m" data-visibility-attribute="visible">
+
+                        <div class="HotspotAnnotation">Experiencia</div>
+                    </button><button class="Hotspot" slot="hotspot-3" data-position="199.56461067438562m -194.1154748189145m -23.58811258087917m" data-normal="-0.6354576556786904m 0.4410035942757817m 0.6338054888332734m" data-visibility-attribute="visible">
+
+                        <div class="HotspotAnnotation">Idiomas</div>
+                    </button><button class="Hotspot" slot="hotspot-4" data-position="-66.99712163563382m 169.20439560552518m -79.2456225347795m" data-normal="-0.2164128495592188m 0.8488127985092078m 0.4823715493606832m" data-visibility-attribute="visible">
+
+                        <div class="HotspotAnnotation">Mundos Interactivos</div>
+                    </button><button class="Hotspot" slot="hotspot-5" data-position="-70.9250612100841m 159.53803611274338m 7.216051041074252m" data-normal="-0.7980897503847018m 0.6024460500216042m -0.010559694325652371m" data-visibility-attribute="visible">
+
+                        <div class="HotspotAnnotation">Arte Visual</div>
+                    </button><button class="Hotspot" slot="hotspot-6" data-position="18.280777384025207m 183.40495396913002m -13.93984288541003m" data-normal="0.5194261432026522m 0.7985854479639473m 0.3040686831257698m" data-visibility-attribute="visible">
+                        <div class="HotspotAnnotation">Diseño web</div>
+                    </button>
+                    <div class="progress-bar hide" slot="progress-bar">
+                        <div class="update-bar"></div>
+                    </div>
+                    <button slot="ar-button" id="ar-button">
+
+                        <!-- Barra de progreso -->
+                        <div class="progress-bar hide" slot="progress-bar">
+                            <div class="update-bar"></div>
+                        </div>
+
+                        <!-- Botón para Realidad Aumentada -->
+                        <button slot="ar-button" id="ar-button">
+                            View in your space
+                        </button>
+                </model-viewer>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!--
     <section id="sobre-mi" class="about">
         <h2>Sobre mí</h2>
         <p>[Incluye una breve descripción sobre ti y tus intereses.]</p>
@@ -97,4 +102,5 @@
 
     <script src="js/script.js"></script>
 </body>
+
 </html>
