@@ -1,4 +1,6 @@
 /* Reinicio de márgenes y paddings */
+
+/*#2272FF COLOR PRIMARIO*/
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +11,14 @@
 body {
     font-family: Arial, sans-serif;
     color: #fff;
-    background-color: #1D1D1D; /* Color fondo*/
+    background-color: #1D1D1D;
+    /* Color fondo*/
+}
+/*editar importante para cuadrarlo*/
+.container{ 
+    width: 1200px !important;
+    height: 1500px !important;
+    background-color: red;
 }
 
 /* Barra de navegación */
@@ -51,16 +60,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; 
-    padding: 0; 
+    height: 100vh;
+    padding: 0;
     position: relative;
 }
 
 /* Nombre y descripción */
 .hero {
     position: absolute;
-    left: 50px; /* Alineado desde la izquierda */
-    top: 50%; /* Centra verticalmente */
+    left: 50px;
+    /* Alineado desde la izquierda */
+    bottom: 5%;
+    /* Centra verticalmente */
     transform: translateY(-50%);
     text-align: left;
     z-index: 2;
@@ -68,21 +79,20 @@ body {
 
 .hero h1 {
     font-size: 3em;
-    margin-bottom: 10px;
-}
 
-.hero p {
-    font-size: 1.5em;
-    color: #ccc;
 }
 
 /* Modelo 3D */
 .central-item {
-    position: absolute;
-    top: 50%; /* Centra verticalmente */
-    left: 50%; /* Centra horizontalmente */
-    transform: translate(-50%, -50%); /* El centro sea el modelo */
-    width: 600px; /* Tamaño del modelo */
+    position: fixed;
+    top: 50%;
+    /* Centra verticalmente */
+    left: 50%;
+    /* Centra horizontalmente */
+    transform: translate(-50%, -50%);
+    /* El centro sea el modelo */
+    width: 600px;
+    /* Tamaño del modelo */
     height: 500px;
     display: flex;
     justify-content: center;
@@ -96,10 +106,10 @@ model-viewer {
     background-color: transparent;
 }
 
-.Hotspot{
+.Hotspot {
     color: antiquewhite;
     border-radius: 12px;
-    background-color:#2272FF;
+    background-color: #2272FF;
     padding: 8px 28px;
     border-radius: 20px;
     line-height: 24px;
@@ -118,6 +128,32 @@ model-viewer {
     -moz-transition: ease-out 0.4s;
     transition: ease-out 0.4s;
 }
+
 .Hotspot:hover {
-  box-shadow: inset 400px 50px 0 0 #1547a0;
+    box-shadow: inset 400px 50px 0 0 #1547a0;
+}
+
+.item1,
+.item2,
+.item3,
+.item4,
+.item5,
+.item6 {
+    width: 300px;
+    height: 300px;
+    position: fixed;
+    z-index: 10;
+    top: 30%;
+    right: 10%;
+    display: none;
+    background-color: aqua;
+}
+
+.mostrarItem1,
+.mostrarItem2,
+.mostrarItem3,
+.mostrarItem4,
+.mostrarItem5,
+.mostrarItem6 {
+    display: block;
 }
