@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Código para abrir contenidos con cada hotspot
     let hotspots = document.querySelectorAll(".Hotspot");
 
-    hotspots.forEach((hotspot) => {
+    hotspots.forEach((hotspot, index) => {
         hotspot.addEventListener("click", (event) => {
             event.stopPropagation();
 
@@ -41,23 +41,30 @@ document.addEventListener("DOMContentLoaded", () => {
             item5.classList.remove("mostrarItem5");
             item6.classList.remove("mostrarItem6");
 
+            let selectedItem;
             if (hotspotName === "hotspot-1") {
                 item1.classList.add("mostrarItem1");
+                selectedItem = item1;
                 console.log("Muestra el item 1");
             } else if (hotspotName === "hotspot-2") {
                 item2.classList.add("mostrarItem2");
+                selectedItem = item2;
                 console.log("Muestra el item 2");
             } else if (hotspotName === "hotspot-3") {
                 item3.classList.add("mostrarItem3");
+                selectedItem = item3;
                 console.log("Muestra el item 3");
             } else if (hotspotName === "hotspot-4") {
                 item4.classList.add("mostrarItem4");
+                selectedItem = item4;
                 console.log("Muestra el item 4");
             } else if (hotspotName === "hotspot-5") {
                 item5.classList.add("mostrarItem5");
+                selectedItem = item5;
                 console.log("Muestra el item 5");
             } else if (hotspotName === "hotspot-6") {
                 item6.classList.add("mostrarItem6");
+                selectedItem = item6;
                 console.log("Muestra el item 6");
             }
         });
