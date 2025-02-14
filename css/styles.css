@@ -9,11 +9,22 @@
 
 /* General */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Lato', sans-serif;
     color: #fff;
     background-color: #1D1D1D;
     /* Color fondo*/
 }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700; /* Negrita para los encabezados */
+}
+
+p, a, li, div {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400; /* Regular para el texto normal */
+}
+
 /*editar importante para cuadrarlo*/
 .container{ 
     width: 1200px !important;
@@ -58,28 +69,85 @@ body {
 /* Sección de proyectos */
 .projects {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    padding: 0;
-    position: relative;
+    min-height: 100vh; /* Asegura que el contenedor tenga suficiente altura */
+    padding: 20px;
+    overflow: auto; /* Permite el scroll */
 }
 
 /* Nombre y descripción */
 .hero {
     position: absolute;
-    left: 50px;
-    /* Alineado desde la izquierda */
-    bottom: 5%;
-    /* Centra verticalmente */
-    transform: translateY(-50%);
-    text-align: left;
-    z-index: 2;
+    left: 5%; /* Ajusta la posición horizontal */
+    bottom: 5%; /* Ajusta la posición vertical */
+    text-align: left; /* Alinea el texto a la izquierda */
+    z-index: 3; /* Asegúrate de que el z-index sea mayor que el del model-viewer */
+    color: #ffffff; /* Color del texto */
 }
 
 .hero h1 {
-    font-size: 3em;
+    font-size: 3em; /* Tamaño del nombre */
+    font-weight: 700; /* Negrita */
+    margin: 0;
+    padding: 0;
+}
 
+.hero .text-outline {
+    font-size: 2.5em; /* Tamaño del apellido */
+    font-weight: 400; /* Regular */
+    color: transparent; /* Hace el texto transparente */
+    -webkit-text-stroke-width: 1px; /* Ancho del borde */
+    -webkit-text-stroke-color: #2272FF; /* Color del borde */
+    margin: 0;
+    padding: 0;
+}
+
+.hero.scrolled {
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco perlado semi-transparente */
+    transition: background-color 0.5s ease; /* Transición suave */
+    opacity: 0; /* Desvanecer el texto */
+}
+
+.underline-thick {
+    position: relative;
+    display: inline-block;
+    overflow: hidden; /* Ocultar el contenido desbordado */
+}
+
+.underline-thick::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 0;
+    height: 4px;
+    background-color: #1547a0; /* Color de la línea */
+    transition: width 1s ease; /* Transición suave para el ancho */
+}
+
+.hero.scrolled .underline-thick::after {
+    width: 50%; /* Hacer la línea más pequeña */
+    left: 0; /* Mover la línea hacia la izquierda */
+}
+
+.hero.visible .underline-thick::after {
+    width: 120%; /* Hacer la línea visible */
+}
+
+.underline-rect {
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 0;
+    height: 4px;
+    background-color: #1547a0; /* Color del rectángulo */
+    transition: width 1s ease; /* Transición suave para el ancho */
+}
+
+.hero.visible .underline-rect {
+    width: 120%; /* Hacer el rectángulo visible */
 }
 
 /* Modelo 3D */
@@ -91,13 +159,13 @@ body {
     /* Centra horizontalmente */
     transform: translate(-50%, -50%);
     /* El centro sea el modelo */
-    width: 600px;
+    width: 500px;
     /* Tamaño del modelo */
     height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2;
+    z-index: 2; /* Asegúrate de que el z-index sea menor que el de la sección hero */
 }
 
 model-viewer {
@@ -142,11 +210,34 @@ model-viewer {
     width: 300px;
     height: 300px;
     position: fixed;
-    z-index: 10;
     top: 30%;
     right: 10%;
+    z-index: 10;
     display: none;
-    background-color: aqua;
+    background-color: hsla(218, 100%, 56.7%, 0.7);
+    border-radius: 20px; /* Bordes redondeados */
+    border: 5px solid rgba(21, 72, 160, 0.7);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transiciones suaves */
+    opacity: 0; /* Inicialmente oculto */
+    transform: scale(0.95); /* Inicialmente más pequeño */
+    padding: 20px; /* Añadir padding */
+    display: flex;
+    flex-direction: column; /* Alinear elementos en columna */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center;
+    text-align: center; /* Centrar el texto */
+}
+
+.item-title {
+    text-align: center; /* Centrar el título */
+    margin-bottom: 10px; /* Espacio debajo del título */
+    align-self: flex-start; /* Alinear el título en la parte superior */
+}
+
+.item-content {
+    text-align: left; /* Alinear el contenido a la izquierda */
+    align-self: flex-end; /* Alinear el contenido en la parte inferior */
 }
 
 .mostrarItem1,
@@ -155,5 +246,28 @@ model-viewer {
 .mostrarItem4,
 .mostrarItem5,
 .mostrarItem6 {
-    display: block;
+    display: flex; /* Cambiar a flex para mantener la alineación */
+    opacity: 1; 
+    transform: scale(1); 
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.circle-container {
+    position: relative;
+    width: 100%;
+    height: 3000px; /* Ajusta la altura para aumentar el scroll */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
