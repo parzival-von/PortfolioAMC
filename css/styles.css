@@ -81,6 +81,20 @@ body {
     font-size: 3em;
 
 }
+..underline-thick {
+    position: relative;
+    display: inline-block;
+}
+
+.underline-thick::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Ajusta la posición vertical de la línea */
+    width: 120%; /* Ajusta el ancho de la línea */
+    height: 10px; /* Ajusta el grosor de la línea */
+    background-color: #2272FF; /* Ajusta el color de la línea */
+}
 
 /* Modelo 3D */
 .central-item {
