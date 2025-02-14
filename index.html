@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portfolio</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-
 </head>
 
 <body>
@@ -26,7 +26,8 @@
     <section id="proyectos" class="projects">
         <!-- Nombre y descripción -->
         <div class="hero">
-            <h1 class="underline-thick">Asier <br>Martínez Corona</h1>
+            <h1 class="underline-thick">Asier <br><span class="text-outline">Martínez Corona</span></h1>
+            <div class="underline-rect"></div>
         </div>
 
         <!-- Círculo de proyectos -->
@@ -38,7 +39,7 @@
                     camera-controls touch-action="pan-y" camera-orbit="calc(-1rad - env(window-scroll-y) * 2rad) calc(100deg - env(window-scroll-y) * 90deg) calc(0m + env(window-scroll-y) * 5m)" tone-mapping="neutral" poster="poster.webp" shadow-intensity="1.09" exposure="0.55" style="width: 80%; height: 80%;">
 
                     <!-- Hotspot interactivo -->
-                    <button class="Hotspot" slot="hotspot-1" data-position="30.41002944518105m -145.98426103479414m -195.85662280174387m" data-normal="0.12390979746671431m 0.41227628618813017m -0.902593278248116m" data-visibility-attribute="visible">
+                    <!-- <button class="Hotspot" slot="hotspot-1" data-position="30.41002944518105m -145.98426103479414m -195.85662280174387m" data-normal="0.12390979746671431m 0.41227628618813017m -0.902593278248116m" data-visibility-attribute="visible">
                         <div class="HotspotAnnotation">Experiencia</div>
                     </button>
 
@@ -48,7 +49,7 @@
 
                     <button class="Hotspot" slot="hotspot-3" data-position="-148.75583275214677m -205.6815116218041m -55.00206664071516m" data-normal="0.5421952023767562m 0.31886870102357756m 0.7773976550177939m" data-visibility-attribute="visible">
                         <div class="HotspotAnnotation">Estudios</div>
-                    </button>
+                    </button> -->
 
                     <button class="Hotspot" slot="hotspot-4" data-position="37.51989713458498m 168.95150710109647m -5.27067445919684m" data-normal="0.3117896730757719m 0.8321940291025504m 0.4585196808091959m" data-visibility-attribute="visible">
                         <div class="HotspotAnnotation">Mundos Interactivos</div>
@@ -74,12 +75,28 @@
                 </model-viewer>
             </div>
         </div>
-        <div class="item1" id="item1"></div>
-        <div class="item2" id="item2"></div>
-        <div class="item3" id="item3"></div>
-        <div class="item4" id="item4"></div>
-        <div class="item5" id="item5"></div>
-        <div class="item6" id="item6"></div>
+        <div id="item1" class="item1">
+            <h2 class="item-title">Título del Item 1</h2>
+            <p class="item-content">Contenido del Item 1</p>
+        </div>
+        <div id="item2" class="item2">
+            <h2 class="item-title">Título del Item 2</h2>
+            <p class="item-content">Contenido del Item 2</p>
+        </div>
+        <div class="item3" id="item3">hdenj</div>
+        <div class="item4" id="item4">
+            <h2 class="item-title">Mundos Interactivos</h2>
+            <p class="item-content">Contenido del Item 2</p>
+        </div>
+        <div class="item5" id="item5">
+            <h2 class="item-title">Diseño Web</h2>
+            <p class="item-content">Contenido del Item 2</p>
+            
+        </div>
+        <div class="item6" id="item6">
+            <h2 class="item-title">Diseño Web</h2>
+            <p class="item-content">Contenido del Item 2</p>
+        </div>
     </section>
 
 
