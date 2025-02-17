@@ -1,30 +1,31 @@
 #proyectos {
     background-color: red;
     width: 100%;
-    height: 400px;
+    height: 1000px;
     padding: 50px;
     padding-top: 100px;
     overflow: hidden; /* Ocultar el desbordamiento */
+    position: relative; /* Para posicionar los controles del carrusel */
 }
 
 .container-proyectos {
-    padding: 50px;
     display: flex;
     justify-content: center; /* Centrar los proyectos horizontalmente */
-    flex-wrap: wrap; /* Permitir que los proyectos se envuelvan en varias filas */
-    transition: transform 0.5s ease-in-out; /* Transición suave */
+    align-items: center; /* Centrar los proyectos verticalmente */
+    position: relative;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px; /* Añadir perspectiva para el efecto 3D */
 }
 
 .proyecto {
-    min-width: 300px;
+    width: 300px;
     height: 300px;
     background-size: cover; /* Asegurar que la imagen de fondo cubra todo el contenedor */
     background-position: center; /* Centrar la imagen de fondo */
-    margin: 10px;
-    border-radius: 20px;
-    position: relative; /* Permitir posicionamiento absoluto de los hijos */
-    overflow: hidden; /* Ocultar cualquier contenido que se desborde */
-    padding: 20px;
+    border-radius: 50%; /* Hacer los proyectos circulares */
+    position: absolute; /* Posicionar absolutamente los proyectos */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Transición suave para transformaciones y opacidad */
 }
 
 .proyecto h3 {

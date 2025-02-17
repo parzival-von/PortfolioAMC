@@ -1,24 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector('.container-proyectos');
+    const projects = document.querySelectorAll('.proyecto');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
-    let scrollAmount = 0;
+    const totalProjects = projects.length;
+    let angle = 0;
+    const angleStep = 360 / totalProjects;
+
+    function updateProjects() {
+        projects.forEach((project, index) => {
+            const projectAngle = angle + index * angleStep;
+            project.style.transform = `rotateY(${projectAngle}deg) translateZ(500px)`;
+            project.style.opacity = index === 0 ? 1 : 0.5;
+        });
+    }
 
     nextBtn.addEventListener('click', () => {
-        container.scrollBy({ left: 320, behavior: 'smooth' });
-        scrollAmount += 320;
-        if (scrollAmount >= container.scrollWidth - container.clientWidth) {
-            scrollAmount = 0;
-            container.scrollTo({ left: 0, behavior: 'smooth' });
-        }
+        angle -= angleStep;
+        updateProjects();
     });
 
     prevBtn.addEventListener('click', () => {
-        container.scrollBy({ left: -320, behavior: 'smooth' });
-        scrollAmount -= 320;
-        if (scrollAmount < 0) {
-            scrollAmount = container.scrollWidth - container.clientWidth;
-            container.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-        }
+        angle += angleStep;
+        updateProjects();
     });
+
+    updateProjects(); // Inicializar el estado del carrusel
 });
