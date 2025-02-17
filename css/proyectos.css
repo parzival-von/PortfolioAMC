@@ -1,0 +1,58 @@
+#proyectos {
+    background-color: red;
+    width: 100%;
+    height: 1000px;
+    padding: 50px;
+    padding-top: 100px;
+    overflow: hidden; /* Ocultar el desbordamiento */
+    position: relative; /* Para posicionar los controles del carrusel */
+}
+
+.container-proyectos {
+    display: flex;
+    justify-content: center; /* Centrar los proyectos horizontalmente */
+    align-items: center; /* Centrar los proyectos verticalmente */
+    position: relative;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px; /* Añadir perspectiva para el efecto 3D */
+}
+
+.proyecto {
+    width: 300px;
+    height: 300px;
+    background-size: cover; /* Asegurar que la imagen de fondo cubra todo el contenedor */
+    background-position: center; /* Centrar la imagen de fondo */
+    border-radius: 50%; /* Hacer los proyectos circulares */
+    position: absolute; /* Posicionar absolutamente los proyectos */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Transición suave para transformaciones y opacidad */
+}
+
+.proyecto h3 {
+    position: absolute;
+    bottom: 20px; /* Ajustar según sea necesario */
+    left: 20px; /* Ajustar según sea necesario */
+    color: white; /* Color del texto */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para el texto */
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+.carousel-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
