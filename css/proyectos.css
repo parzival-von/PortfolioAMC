@@ -10,6 +10,8 @@
 }
 
 .container-proyectos {
+    margin-top: 130px;
+    padding-top: 20px;
     display: flex;
     flex-direction: column; /* Alinear los proyectos en una columna */
     justify-content: flex-start; /* Alinear los proyectos al principio */
@@ -24,19 +26,19 @@
 .proyecto {
     width: 100px; /* Ancho fijo para cada proyecto */
     height: 100px; /* Altura fija para cada proyecto */
-    background-size: cover; /* Asegurar que la imagen de fondo cubra todo el contenedor */
-    background-position: center; /* Centrar la imagen de fondo */
-    border-radius: 20px; /* Hacer los proyectos circulares */
-    position: relative; /* Posicionar absolutamente los proyectos */
-    transition: transform 0.5s ease, opacity 0.5s ease; /* Transición suave para transformaciones y opacidad */
-    margin-bottom: 20px; /* Espacio entre los proyectos */
-    cursor: pointer; /* Cambiar el cursor al pasar sobre los proyectos */
+    background-size: cover; 
+    background-position: center;
+    border-radius: 20px; 
+    position: relative;
+    transition: transform 0.5s ease, opacity 0.5s ease; 
+    margin-bottom: 20px;
+    cursor: pointer; 
 }
 
 .proyecto h3 {
     position: absolute;
-    bottom: 10px; /* Ajustar según sea necesario */
-    left: 10px; /* Ajustar según sea necesario */
+    bottom: 10px;
+    left: 10px;
     color: white; /* Color del texto */
     background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para el texto */
     padding: 5px;
@@ -44,31 +46,44 @@
     margin: 0;
 }
 
-.carousel-controls {
-    display: flex;
-    flex-direction: column; /* Alinear los controles en una columna */
+.project-info {
+    margin-top: 130px;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    height: auto;
     position: absolute;
-    top: 50%;
-    left: 150px; /* Mover los controles a la derecha del carrusel */
-    transform: translateY(-50%);
+    left: 200px; /* Ajustar según sea necesario */
+    display: flex;
+    flex-direction: row; /* Alinear el contenido en una fila */
+    gap: 20px; /* Espacio entre los elementos */
+    display: none; /* Ocultar por defecto */
 }
 
-.carousel-button {
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-    margin-bottom: 10px; /* Espacio entre los botones */
+.project-info .text-content {
+    flex: 1;
+}
+
+.project-info .media-content {
+    flex: 1;
+}
+
+.project-info .software-logos img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
 }
 
 .bottom-navbar {
     width: 100%;
-    background-color: #111;
+    height: 50px;
+    background-color: aqua;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 5px;
     position: relative;
     z-index: 1;
 }
