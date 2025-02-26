@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector('.container-proyectos');
     const projects = document.querySelectorAll('.proyecto');
     const projectInfo = document.querySelector('.project-info');
+    const proyectosSection = document.querySelector('#proyectos');
     let currentIndex = 0;
 
     const projectDetails = [
@@ -9,36 +10,41 @@ document.addEventListener("DOMContentLoaded", () => {
             title: "Proyecto 1", 
             content: "Contenido del Proyecto 1", 
             software: "Software utilizado: Photoshop, Illustrator", 
-            logos: ['img/photoshop.png', 'img/illustrator.png'],
-            media: '<img src="img/proyecto1.jpg" alt="Proyecto 1"><video src="video/proyecto1.mp4" controls></video>' 
+            logos: ['img/logos/photoshop.png', 'img/logos/illustrator.png'],
+            media: '<img src="img/proyecto1.jpg" alt="Proyecto 1"><video src="video/proyecto1.mp4" controls></video>',
+            backgroundImage: 'img/proyecto1.jpg'
         },
         { 
             title: "Proyecto 2", 
             content: "Contenido del Proyecto 2", 
             software: "Software utilizado: Blender, Unity", 
-            logos: ['img/blender.png', 'img/unity.png'],
-            media: '<img src="img/proyecto2.jpg" alt="Proyecto 2"><video src="video/proyecto2.mp4" controls></video>' 
+            logos: ['img/logos/blender.png', 'img/logos/unity.png'],
+            media: '<img src="img/proyecto2.jpg" alt="Proyecto 2"><video src="video/proyecto2.mp4" controls></video>',
+            backgroundImage: 'img/proyecto2.jpg'
         },
         { 
             title: "Proyecto 3", 
             content: "Contenido del Proyecto 3", 
             software: "Software utilizado: Maya, Unreal Engine", 
-            logos: ['img/maya.png', 'img/unreal.png'],
-            media: '<img src="img/proyecto3.jpg" alt="Proyecto 3"><video src="video/proyecto3.mp4" controls></video>' 
+            logos: ['img/logos/maya.png', 'img/logos/unreal.png'],
+            media: '<img src="img/proyecto3.jpg" alt="Proyecto 3"><video src="video/proyecto3.mp4" controls></video>',
+            backgroundImage: 'img/proyecto3.jpg'
         },
         { 
             title: "Proyecto 4", 
             content: "Contenido del Proyecto 4", 
             software: "Software utilizado: After Effects, Premiere Pro", 
-            logos: ['img/aftereffects.png', 'img/premiere.png'],
-            media: '<img src="img/proyecto4.jpg" alt="Proyecto 4"><video src="video/proyecto4.mp4" controls></video>' 
+            logos: ['img/logos/aftereffects.png', 'img/logos/premiere.png'],
+            media: '<img src="img/proyecto4.jpg" alt="Proyecto 4"><video src="video/proyecto4.mp4" controls></video>',
+            backgroundImage: 'img/proyecto4.jpg'
         },
         { 
             title: "Proyecto 5", 
             content: "Contenido del Proyecto 5", 
             software: "Software utilizado: Sketch, Figma", 
-            logos: ['img/sketch.png', 'img/figma.png'],
-            media: '<img src="img/proyecto5.jpg" alt="Proyecto 5"><video src="video/proyecto5.mp4" controls></video>' 
+            logos: ['img/logos/sketch.png', 'img/logos/figma.png'],
+            media: '<img src="img/proyecto5.jpg" alt="Proyecto 5"><video src="video/proyecto5.mp4" controls></video>',
+            backgroundImage: 'img/proyecto5.jpg'
         }
     ];
 
@@ -67,6 +73,9 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         `;
         projectInfo.style.display = 'flex';
+        proyectosSection.style.backgroundImage = `url(${details.backgroundImage})`;
+        proyectosSection.style.backgroundSize = 'cover';
+        proyectosSection.style.backgroundPosition = 'center';
     }
 
     projects.forEach((project, index) => {
