@@ -175,11 +175,17 @@ model-viewer {
     text-align: center; /* Centrar el título */
     margin-bottom: 10px; /* Espacio debajo del título */
     align-self: flex-start; /* Alinear el título en la parte superior */
+    text-decoration: none; /* Quitar subrayado */
 }
 
 .item-content {
     text-align: left; /* Alinear el contenido a la izquierda */
     align-self: flex-end; /* Alinear el contenido en la parte inferior */
+
+}
+.item-content:hover {
+    cursor:pointer; /* Alinear el contenido en la parte inferior */
+    
 }
 
 .mostrarItem1,

@@ -126,7 +126,6 @@
     position: relative;
     overflow: hidden;
     display: inline-block;
-    font-family: "Lucida Console", Monaco, monospace;
     box-shadow: inset 0 0 0 0 #1547a0;
     -webkit-transition: ease-out 0.4s;
     -moz-transition: ease-out 0.4s;
@@ -163,7 +162,6 @@
     position: relative;
     overflow: hidden;
     display: inline-block;
-    font-family: "Lucida Console", Monaco, monospace;
     box-shadow: inset 0 0 0 0 #1547a0;
     -webkit-transition: ease-out 0.4s;
     -moz-transition: ease-out 0.4s;

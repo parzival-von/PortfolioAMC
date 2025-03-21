@@ -11,15 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
             content: "Contenido del Proyecto 1", 
             software: "Software utilizado: Photoshop, Illustrator", 
             logos: ['img/logos/photoshop.png', 'img/logos/illustrator.png'],
-            media: '<img src="img/proyecto1.jpg" alt="Proyecto 1"><video src="video/proyecto1.mp4" controls></video>',
-            backgroundImage: 'img/proyecto1.jpg'
+            media: '<video src="video/proyecto1.mp4" controls></video>',
+            backgroundImage: 'img/proyecto1.webp'
         },
         { 
             title: "Proyecto 2", 
             content: "Contenido del Proyecto 2", 
             software: "Software utilizado: Blender, Unity", 
             logos: ['img/logos/blender.png', 'img/logos/unity.png'],
-            media: '<img src="img/proyecto2.jpg" alt="Proyecto 2"><video src="video/proyecto2.mp4" controls></video>',
+            media: '<video src="video/proyecto2.mp4" controls></video>',
             backgroundImage: 'img/proyecto2.jpg'
         },
         { 
