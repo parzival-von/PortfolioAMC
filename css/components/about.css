@@ -1,0 +1,27 @@
+#about-me { background: var(--bg-section); }
+.profile-wrapper {
+  position: relative; display:inline-block;
+  margin-bottom:2rem;
+}
+.profile-wrapper img {
+  width:180px; height:180px; object-fit:cover;
+  border-radius:50%; box-shadow:0 0 20px rgba(34,114,255,0.4);
+}
+.ring {
+  position:absolute; border:2px solid var(--primary);
+  border-radius:50%; top:50%; left:50%;
+  transform:translate(-50%,-50%); pointer-events:none;
+}
+.ring--outer { width:240px; height:240px; animation:rotate 12s linear infinite; }
+.ring--inner { width:180px; height:180px; animation:rotate-reverse 8s linear infinite; }
+@keyframes rotate { to { transform:translate(-50%,-50%) rotate(360deg); } }
+@keyframes rotate-reverse { to { transform:translate(-50%,-50%) rotate(-360deg); } }
+.btn-neon {
+  padding:0.75rem 2rem; border:none; border-radius:50px;
+  background: var(--primary); color: var(--light);
+  box-shadow:0 0 10px rgba(34,114,255,0.6), inset 0 0 5px rgba(255,255,255,0.2);
+  transition: box-shadow .3s;
+}
+.btn-neon:hover {
+  box-shadow:0 0 20px rgba(34,114,255,0.8), inset 0 0 10px rgba(255,255,255,0.3);
+}

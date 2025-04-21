@@ -1,24 +1,24 @@
 /* Reset y variables globales */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 :root {
-  --font-base: 'Lato', sans-serif;
-  --color-bg: #1D1D1D;
-  --color-light: #FFFFFF;
-  --color-primary: #2272FF;
-  --color-accent: #ff6347;
-  --heading-weight: 700;
-  --body-weight: 400;
+  --bg-dark:       #101627;
+  --bg-section:    #15203c;
+  --primary:       #2272FF;
+  --light:         #FFFFFF;
+  --glass-bg:      rgba(34,114,255,0.15);
+  --glass-border:  rgba(34,114,255,0.3);
 }
+* { margin:0; padding:0; box-sizing:border-box; }
 
 body {
-  font-family: var(--font-base);
-  background-color: var(--color-bg) !important;
-  color: var(--color-light);
+  font-family: 'Lato', sans-serif;
+  background: var(--bg-dark);
+  color: var(--light);
+  overflow-x: hidden;
+}
+
+#particles-js {
+  position: fixed; top:0; left:0;
+  width:100%; height:100%; z-index:-1;
 }
 
 /* Tipografía base */
