@@ -1,0 +1,35 @@
+.skill-card {
+  background: rgba(34, 114, 255, 0.41);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.2px);
+  -webkit-backdrop-filter: blur(9.2px);
+  border: 1px solid rgba(34, 114, 255, 0.21);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.skill-card .card-title {
+  color: var(--color-light);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.skill-badge {
+  display: inline-block;
+  font-family: var(--font-base);
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin: 0.25rem;
+  padding: 0.4rem 0.75rem;
+  background: var(--color-primary);
+  color: var(--color-light);
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease;
+}
+
+.skill-badge:hover {
+  box-shadow: 0 0 10px rgba(34, 114, 255, 0.7);
+}

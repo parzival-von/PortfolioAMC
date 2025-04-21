@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyectos Interactivos</title>
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/proyectos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyectos Interactivos</title>
+  <link rel="stylesheet" href="../css/base/base.css">
+  <link rel="stylesheet" href="../css/layout/layout.css">
+  <link rel="stylesheet" href="../css/components/header.css">
+  <link rel="stylesheet" href="../css/components/footer.css">
+  <link rel="stylesheet" href="../css/components/projects.css">
+  <link rel="stylesheet" href="../css/components/hotspots.css">
+  <link rel="stylesheet" href="../css/components/styles.css">
 </head>
 <body>
     <header class="main-header">
@@ -15,8 +18,8 @@
             <div class="logo">AMC Portfolio</div>
             <ul class="nav-links">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="ar.html">Proyectos</a></li>
-                <li><a href="sobre-mi.html">Sobre mí</a></li>
+                <li><a href="pages/ar.html">Proyectos</a></li>
+                <li><a href="pages/sobre-mi.html">Sobre mí</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
@@ -67,5 +70,15 @@
         <p>2025 Portfolio AMC. Todos los derechos reservados.</p>
     </footer>
     <script src="js/carousel.js"></script>
+    <!-- Particles.js -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script>
+  /* Asumiendo que tienes tu JSON en la raíz pública */
+  particlesJS.load(
+    'particles-js',
+    'particlesjs-config.json',
+    () => console.log('✨ Particles cargados')
+  );
+</script>
 </body>
 </html>

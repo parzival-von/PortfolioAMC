@@ -1,3 +1,7 @@
+:root {
+  --header-height: 70px; /* o el alto real de tu header */
+}
+
 /* Contenedor central */
 .container {
   max-width: 1200px;
@@ -9,4 +13,11 @@
 section {
   width: 100%;
   padding: 4rem 0;
+}
+
+body {
+  font-family: var(--font-base);
+  background-color: var(--color-bg);
+  color: var(--color-light);
+  padding-top: var(--header-height);
 }
