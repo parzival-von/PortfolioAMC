@@ -1,0 +1,26 @@
+.hero {
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: left;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: .5rem;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.underline-thick {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-rect {
+  width: 100px;
+  height: 4px;
+  background-color: var(--color-primary);
+  margin-top: .5rem;
+}

@@ -1,0 +1,12 @@
+/* Contenedor central */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Secciones full‑width */
+section {
+  width: 100%;
+  padding: 4rem 0;
+}

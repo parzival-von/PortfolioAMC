@@ -1,0 +1,47 @@
+/* Reset y variables globales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-base: 'Lato', sans-serif;
+  --color-bg: #1D1D1D;
+  --color-light: #FFFFFF;
+  --color-primary: #2272FF;
+  --color-accent: #ff6347;
+  --heading-weight: 700;
+  --body-weight: 400;
+}
+
+body {
+  font-family: var(--font-base);
+  background-color: var(--color-bg);
+  color: var(--color-light);
+}
+
+/* Tipografía base */
+h1,h2,h3,h4,h5,h6 {
+  font-family: var(--font-base);
+  font-weight: var(--heading-weight);
+}
+
+p,a,li,div {
+  font-family: var(--font-base);
+  font-weight: var(--body-weight);
+}
+
+section {
+  padding: 50px;
+}
+
+a {
+  color: var(--color-light);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
