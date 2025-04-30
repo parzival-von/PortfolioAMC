@@ -10,9 +10,25 @@
 }
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(17,17,17,0.3);
+  backdrop-filter: blur(9.2px);
+  -webkit-backdrop-filter: blur(9.2px);
+  z-index: 1000;
+}
+
+.navbar-brand,
+.nav-link {
+  color: var(--color-light) !important;
+  transition: color .3s, transform .3s;
+}
+
+.nav-link:hover {
+  color: var(--color-primary) !important;
+  transform: translateX(4px) scale(1.05);
 }
 
 /* Glass effect navbar */

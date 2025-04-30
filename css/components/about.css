@@ -25,3 +25,9 @@
 .btn-neon:hover {
   box-shadow:0 0 20px rgba(34,114,255,0.8), inset 0 0 10px rgba(255,255,255,0.3);
 }
+
+.busto-viewer {
+  width: 100%;
+  max-width: 300px;   /* ajusta a tus necesidades */
+  height: auto;
+}
