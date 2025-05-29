@@ -5,25 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portfolio</title>
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/inicio.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/inicio.css">
+    <link rel="stylesheet" href="css/components/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 
 <body>
-    <header class="main-header">
-        <nav class="navbar">
-            <div class="logo">AMC Portfolio</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="ar.html">Proyectos</a></li>
-                <li><a href="sobre-mi.html">Sobre mí</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
+    <header>
+        <div id="header"></div>
     </header>
 
     <section id="proyectos" class="projects">
@@ -36,76 +28,25 @@
         <!-- Círculo de proyectos -->
         <div class="circle-container">
             <div class="central-item container">
-
                 <!-- Objeto 3D -->
-                <model-viewer src="3dModel/ImageToStl.com_man_bust.glb" ar ar-modes="webxr scene-viewer quick-look"
-                    camera-controls touch-action="pan-y" camera-orbit="calc(-1rad - env(window-scroll-y) * 2rad) calc(100deg - env(window-scroll-y) * 90deg) calc(0m + env(window-scroll-y) * 5m)" tone-mapping="neutral" poster="poster.webp" shadow-intensity="1.09" exposure="0.55" style="width: 80%; height: 80%;">
-
-                    <!-- Hotspot interactivo -->
-                    <!-- <button class="Hotspot" slot="hotspot-1" data-position="30.41002944518105m -145.98426103479414m -195.85662280174387m" data-normal="0.12390979746671431m 0.41227628618813017m -0.902593278248116m" data-visibility-attribute="visible">
-                        <div class="HotspotAnnotation">Experiencia</div>
-                    </button>
-
-                    <button class="Hotspot" slot="hotspot-2" data-position="187.16671190438376m -189.79333455305573m -22.627930157638275m" data-normal="-0.3873693771919351m 0.4630690918021439m 0.7971900537710376m" data-visibility-attribute="visible">
-                        <div class="HotspotAnnotation">Idiomas</div>
-                    </button>
-
-                    <button class="Hotspot" slot="hotspot-3" data-position="-148.75583275214677m -205.6815116218041m -55.00206664071516m" data-normal="0.5421952023767562m 0.31886870102357756m 0.7773976550177939m" data-visibility-attribute="visible">
-                        <div class="HotspotAnnotation">Estudios</div>
-                    </button> -->
-
-                    <button class="Hotspot" slot="hotspot-4" data-position="37.51989713458498m 168.95150710109647m -5.27067445919684m" data-normal="0.3117896730757719m 0.8321940291025504m 0.4585196808091959m" data-visibility-attribute="visible">
-                        <div class="HotspotAnnotation">Mundos Interactivos</div>
-                    </button>
-
-                    <button class="Hotspot" slot="hotspot-5" data-position="11.581423494609119m 174.84391373780295m -119.82441406596135m" data-normal="-0.4755873803284771m 0.879148375856953m -0.03024527897669384m" data-visibility-attribute="visible">
-                        <div class="HotspotAnnotation">Diseño Web</div>
-                    </button>
-
-                    <button class="Hotspot" slot="hotspot-6" data-position="-62.95178101206953m 175.37618397679194m -66.42971228928386m" data-normal="-0.22547204232623486m 0.974088367286131m 0.01772599354271156m" data-visibility-attribute="visible">
-                        <div class="HotspotAnnotation">Arte Visual</div>
-                    </button>
-
-                    <!-- Barra de progreso -->
-                    <div class="progress-bar hide" slot="progress-bar">
-                        <div class="update-bar"></div>
-                    </div>
-
-                    <!-- Botón para Realidad Aumentada -->
-                    <button slot="ar-button" id="ar-button">
-                        View in your space
-                    </button>
+                <model-viewer src="assets/models/ImageToStl.com_man_bust.glb" 
+                    ar ar-modes="webxr scene-viewer quick-look"
+                    camera-controls touch-action="pan-y"
+                    camera-orbit="calc(-1rad - env(window-scroll-y) * 2rad) calc(100deg - env(window-scroll-y) * 90deg) calc(0m + env(window-scroll-y) * 5m)"
+                    tone-mapping="neutral" 
+                    shadow-intensity="1.09" 
+                    exposure="0.55" 
+                    style="width: 80%; height: 80%;">
                 </model-viewer>
             </div>
         </div>
+    </section>
 
-        <div id="item1" class="item1">
-            <h2 class="item-title">Título del Item 1</h2>
-            <p class="item-content">Contenido del Item 1</p>
-        </div>
-        <div id="item2" class="item2">
-            <h2 class="item-title">Título del Item 2</h2>
-            <p class="item-content">Contenido del Item 2</p>
-        </div>
-        <div class="item3" id="item3">hdenj</div>
-        <div class="item4" id="item4">
-            <h2 class="item-title">Mundos Interactivos</h2>
-            <a class="item-content" href="ar.html">AR</a>
-            <p class="item-content">VR</p>
-            <p class="item-content">Videojuegos</p>
-        </div>
-        <div class="item5" id="item5">
-            <h2 class="item-title">Diseño Web</h2>
-            <p class="item-content">Websites</p>
-            <p class="item-content">APP</p>
-            
-        </div>
-        <div class="item6" id="item6">
-            <h2 class="item-title">Arte Visual</h2>
-            <p class="item-content">Modelado 3D</p>
-            <p class="item-content">Fotografía</p>
-            <p class="item-content">Impresión 3D</p>
-        </div>
+    <section id="descripcion" class="description">
+        <h2 class="underline-thick">Sobre mí</h2>
+        <p>Hola, soy Asier Martínez Corona, un apasionado de la tecnología y el arte. Me especializo en crear experiencias interactivas que combinan la realidad aumentada, el diseño web y el arte visual. Mi objetivo es llevar la innovación a cada proyecto que realizo.</p>
+        <p>Con una sólida formación en programación y diseño, he trabajado en diversos proyectos que van desde aplicaciones web hasta experiencias de realidad virtual. Me encanta explorar nuevas tecnologías y encontrar formas creativas de aplicarlas.</p>
+
     </section>
 
     <footer class="footer">
@@ -113,5 +54,12 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+      // Detecta la ruta relativa correcta para el header
+      let headerPath = location.pathname.includes('/pages/') ? '../components/header.html' : 'components/header.html';
+      fetch(headerPath)
+        .then(res => res.text())
+        .then(html => document.getElementById('header').innerHTML = html);
+    </script>
 </body>
 </html>

@@ -13,9 +13,9 @@
   <!-- 2. Tus estilos base y componentes vienen después -->
   <link rel="stylesheet" href="../css/base/base.css">
   <link rel="stylesheet" href="../css/layout/layout.css">
-  <link rel="stylesheet" href="../css/components/header.css">
-  <link rel="stylesheet" href="../css/components/footer.css">
-  <link rel="stylesheet" href="../css/components/hero.css">
+  <link rel="stylesheet" href="css/components/header.css">
+  <link rel="stylesheet" href="css/components/footer.css">
+  <link rel="stylesheet" href="css/components/inicio.css">
   <link rel="stylesheet" href="../css/components/styles.css">
   <link rel="stylesheet" href="../css/components/skills.css">
   <link rel="stylesheet" href="../css/components/particles.css">
@@ -34,9 +34,9 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link text-white" href="../index.html">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="ar.html">Proyectos</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="sobre-mi.html">Sobre mí</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#contacto">Contacto</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="/ar.html">Proyectos</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="/sobre-mi.html">Sobre mí</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="../index.html#contacto">Contacto</a></li>
               </ul>
             </div>
           </div>
@@ -53,7 +53,7 @@
             <div class="central-item container">
 
               <!-- Objeto 3D -->
-              <model-viewer src="assets/models/ImageToStl.com_man_bust.glb" ar ar-modes="webxr scene-viewer quick-look"
+              <model-viewer src="/assets/models/ImageToStl.com_man_bust.glb" ar ar-modes="webxr scene-viewer quick-look"
                   camera-controls touch-action="pan-y" camera-orbit="calc(-1rad - env(window-scroll-y) * 2rad) calc(100deg - env(window-scroll-y) * 90deg) calc(0m + env(window-scroll-y) * 5m)" tone-mapping="neutral" poster="assets/images/poster.webp" shadow-intensity="1.09" exposure="0.55" style="width: 80%; height: 80%;">
 
                   <!-- Hotspot interactivo -->
@@ -219,5 +219,6 @@
   <script src="../js/particles-init.js"></script>
   <script src="../js/carousel.js"></script>
   <script type="module" src="../js/bust-three.js" defer></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
