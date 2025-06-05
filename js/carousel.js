@@ -2,8 +2,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector('.container-proyectos');
     const projects = document.querySelectorAll('.proyecto');
     const projectInfo = document.querySelector('.project-info');
-    const proyectosSection = document.querySelector('#proyectos');
+    const proyectosSection = document.querySelector('.proyectos-section');
     let currentIndex = 0;
+
+    if (!projectInfo || !proyectosSection) {
+        console.error('Elementos necesarios para el carrusel no encontrados');
+        return;
+    }
 
     const projectDetails = [
         { 

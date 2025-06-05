@@ -1,5 +1,3 @@
-<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-
 document.addEventListener("DOMContentLoaded", () => {
     // Navegación suave al hacer clic en los enlaces
     const navLinks = document.querySelectorAll(".nav-links a");
@@ -93,21 +91,20 @@ document.addEventListener("DOMContentLoaded", () => {
     // Detectar el evento de scroll y aplicar la clase
     window.addEventListener('scroll', () => {
         const hero = document.querySelector('.hero');
-        const maxScroll = document.body.scrollHeight - window.innerHeight;
-        const scrollFraction = window.scrollY / maxScroll;
-        const opacity = 1 - scrollFraction;
+        const header = document.querySelector('header');
 
-        hero.style.opacity = opacity;
+        if (hero && header) {
+            const scrollPosition = window.scrollY;
 
-        if (window.scrollY > 0) {
-            hero.classList.add('visible');
+            if (scrollPosition > header.offsetHeight + 10) {
+                hero.style.position = 'fixed';
+                hero.style.top = '0';
+            } else {
+                hero.style.position = 'relative';
+                hero.style.top = 'auto';
+            }
         } else {
-            hero.classList.remove('visible');
-        }
-
-        const underlineRect = document.querySelector('.underline-rect');
-        if (underlineRect) {
-            underlineRect.style.width = `${120 - (70 * scrollFraction)}%`;
+            console.error('Elementos hero o header no encontrados en el DOM.');
         }
     });
 });

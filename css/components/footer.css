@@ -8,3 +8,15 @@
   font-size: 0.9rem;
   text-align: center;
 }
+
+
+.footer-index {
+  position: fixed; /* Fijar el footer en la parte inferior */
+  bottom: 0; /* Asegurar que esté en la parte inferior */
+  width: 100%; /* Ajustar al ancho completo */
+  background-color: #333; /* Color de fondo acorde al diseño */
+  color: #fff; /* Color de texto acorde al diseño */
+  text-align: center; /* Centrar el contenido */
+  padding: 1rem; /* Espaciado interno */
+  z-index: 5; /* Asegurar que esté por encima de otros elementos */
+}

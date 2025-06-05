@@ -27,6 +27,7 @@
         <div id="header"></div>
     </header>
 <main>
+    <div id="particles-js"></div>
     <section id="proyectos" class="projects">
         <!-- Nombre y descripción -->
         <div class="hero">
@@ -36,10 +37,10 @@
 
         <!-- Círculo de proyectos -->
         <div class="circle-container">
-            <div class="central-item container">
+            <div class="central-item container-model">
                 <!-- Objeto 3D -->
               <model-viewer src="/assets/models/ImageToStl.com_man_bust.glb" ar ar-modes="webxr scene-viewer quick-look"
-                  camera-controls touch-action="pan-y" camera-orbit="calc(-1rad - env(window-scroll-y) * 2rad) calc(100deg - env(window-scroll-y) * 90deg) calc(0m + env(window-scroll-y) * 5m)" tone-mapping="neutral" poster="assets/images/poster.webp" shadow-intensity="1.09" exposure="0.55" style="width: 80%; height: 80%;">
+                  camera-controls touch-action="pan-y" camera-orbit="calc(-1rad - env(window-scroll-y) * 2rad) calc(100deg - env(window-scroll-y) * 90deg) calc(0m + env(window-scroll-y) * 5m)" tone-mapping="neutral" shadow-intensity="1.09" exposure="0.55" style="width: 80%; height: 80%;">
 
                   <!-- Hotspot interactivo -->
                   <!-- <button class="Hotspot" slot="hotspot-1" data-position="30.41002944518105m -145.98426103479414m -195.85662280174387m" data-normal="0.12390979746671431m 0.41227628618813017m -0.902593278248116m" data-visibility-attribute="visible">
@@ -81,7 +82,7 @@
     </section>
 
     <section id="descripcion" class="description">
-        <div class="container">
+        <div class="description-container">
         <h2 class="underline-thick">Sobre mí</h2>
         <p>Hola, soy Asier Martínez Corona, un apasionado de la tecnología y el arte. Me especializo en crear experiencias interactivas que combinan la realidad aumentada, el diseño web y el arte visual. Mi objetivo es llevar la innovación a cada proyecto que realizo.</p>
         <p>Con una sólida formación en programación y diseño, he trabajado en diversos proyectos que van desde aplicaciones web hasta experiencias de realidad virtual. Me encanta explorar nuevas tecnologías y encontrar formas creativas de aplicarlas.</p>
@@ -89,12 +90,17 @@
     </section>
     </main>
 
-    <div id="footer"></div>
+    <div id="footer" class="footer-index"></div>
+    
 
-    <script src="js/main.js"></script>
-    <script src="js/carousel.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="js/particles-init.js"></script>
     <script type="module" src="js/bust-three.js"></script>
+    <script>
+      particlesJS.load('particles-js', 'particlesjs-config.json', function() {
+        console.log('✨ Partículas cargadas correctamente');
+      });
+    </script>
 
 
     <script>
@@ -121,6 +127,27 @@ fetch('components/footer.html')
     .then(html => {
       document.getElementById('footer').innerHTML = html;
     });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const hero = document.getElementById('hero');
+    const header = document.getElementById('header');
+
+    if (hero && header) {
+      window.addEventListener('scroll', () => {
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition > header.offsetHeight + 10) {
+          hero.classList.add('fixed');
+          hero.classList.remove('initial');
+        } else {
+          hero.classList.add('initial');
+          hero.classList.remove('fixed');
+        }
+      });
+    } else {
+      console.error('Elementos hero o header no encontrados en el DOM.');
+    }
+  });
 </script>
 </body>
 </html>
