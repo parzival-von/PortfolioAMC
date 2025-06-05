@@ -1,6 +1,3 @@
-// Carga la configuración (ajusta ruta si tu JSON está en otra carpeta)
-particlesJS.load(
-  'particles-js',
-  '../js/particles-config.json',
-  () => console.log('Particles cargadas')
-);
+particlesJS.load('particles-js', 'particlesjs-config.json', function() {
+  console.log('✨ Partículas cargadas');
+});

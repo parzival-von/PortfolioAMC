@@ -1,4 +1,7 @@
 /*editar importante para cuadrarlo*/
+
+
+
 .container{ 
     width: 1200px !important;
     height: 1500px !important;
@@ -91,7 +94,7 @@
 
 /* Modelo 3D */
 .central-item {
-    position: fixed;
+    position: relative;
     top: 50%;
     /* Centra verticalmente */
     left: 50%;
@@ -210,18 +213,20 @@ model-viewer {
     align-items: center;
 }
 #descripcion {
-    position: fixed;
-    top: 120px; /* Ajusta según tu diseño */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60vw;
-    max-width: 700px;
-    background: rgba(255,255,255,0.95);
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-    z-index: 10;
+  position: relative;
+  margin: 2rem auto;
+  max-width: 700px;
+  background: rgba(255,255,255,0.95);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  z-index: 10;
 }
+
 #proyectos {
     position: relative; /* Para que el absolute de #descripcion sea relativo a esta sección */
+}
+#proyectos,
+#descripcion {
+  margin-bottom: 3rem;
 }

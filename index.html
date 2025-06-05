@@ -5,11 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portfolio</title>
+    <link rel="stylesheet" href="css/base/base.css">
+    <link rel="stylesheet" href="css/layout/layout.css">
+    <link rel="stylesheet" href="css/components/styles.css">
     <link rel="stylesheet" href="css/components/header.css">
     <link rel="stylesheet" href="css/components/footer.css">
     <link rel="stylesheet" href="css/components/inicio.css">
-    <link rel="stylesheet" href="css/components/styles.css">
+    
+    <!-- 1. Dependencias externas cargadas primero -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 
@@ -17,7 +23,7 @@
     <header>
         <div id="header"></div>
     </header>
-
+<main>
     <section id="proyectos" class="projects">
         <!-- Nombre y descripción -->
         <div class="hero">
@@ -43,23 +49,46 @@
     </section>
 
     <section id="descripcion" class="description">
+        <div class="container">
         <h2 class="underline-thick">Sobre mí</h2>
         <p>Hola, soy Asier Martínez Corona, un apasionado de la tecnología y el arte. Me especializo en crear experiencias interactivas que combinan la realidad aumentada, el diseño web y el arte visual. Mi objetivo es llevar la innovación a cada proyecto que realizo.</p>
         <p>Con una sólida formación en programación y diseño, he trabajado en diversos proyectos que van desde aplicaciones web hasta experiencias de realidad virtual. Me encanta explorar nuevas tecnologías y encontrar formas creativas de aplicarlas.</p>
-
+        </div>
     </section>
+    </main>
 
-    <footer class="footer">
-        <p>2025 Portfolio AMC. Todos los derechos reservados.</p>
-    </footer>
+    <div id="footer"></div>
 
-    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/particles-init.js"></script>
+    <script type="module" src="js/bust-three.js"></script>
+
+
     <script>
-      // Detecta la ruta relativa correcta para el header
-      let headerPath = location.pathname.includes('/pages/') ? '../components/header.html' : 'components/header.html';
-      fetch(headerPath)
-        .then(res => res.text())
-        .then(html => document.getElementById('header').innerHTML = html);
-    </script>
+// Cargar el header desde un archivo HTML externo
+  fetch('components/header.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('header').innerHTML = html;
+
+      // Ejecutar el JS del menú hamburguesa DESPUÉS de insertar el header
+      const toggler = document.getElementById("toggleBtn");
+      const menu = document.getElementById("navMenu");
+
+      if (toggler && menu) {
+        toggler.addEventListener("click", () => {
+          menu.classList.toggle("active");
+        });
+      }
+    });
+
+// Cargar el footer desde un archivo HTML externo
+fetch('components/footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer').innerHTML = html;
+    });
+</script>
 </body>
 </html>
