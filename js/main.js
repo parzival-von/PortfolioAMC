@@ -1,5 +1,3 @@
-<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-
 document.addEventListener("DOMContentLoaded", () => {
     // Navegación suave al hacer clic en los enlaces
     const navLinks = document.querySelectorAll(".nav-links a");
