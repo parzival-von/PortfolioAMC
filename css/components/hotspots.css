@@ -1,18 +1,21 @@
 .Hotspot {
-  background-color: var(--color-primary);
   color: var(--color-light);
   padding: 8px 28px;
-  border: none;
-  border-radius: 20px;
   font-size: 14px;
   font-weight: 600;
+  letter-spacing: .02em;
   cursor: pointer;
-  transition: box-shadow .4s;
-  box-shadow: inset 0 0 0 0 #1547a0;
+  background: var(--glass-bg);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.2px);
+  -webkit-backdrop-filter: blur(9.2px);
+  border: 1px solid var(--glass-border);
+  transition: box-shadow .4s ease;
 }
 
 .Hotspot:hover {
-  box-shadow: inset 400px 50px 0 0 #1547a0;
+  box-shadow: inset 400px 50px 0 0 var(--color-primary);
 }
 
 .progress-bar {
@@ -36,21 +39,4 @@
   width: 0;
   background: var(--color-primary);
   transition: width .3s;
-}
-
-#ar-button {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background-color: var(--color-accent);
-  color: var(--color-light);
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color .3s;
-}
-
-#ar-button:hover {
-  background-color: #e5533d;
 }

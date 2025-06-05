@@ -43,3 +43,60 @@
 .mostrarItem4 { display: block; }
 .mostrarItem5 { display: block; }
 .mostrarItem6 { display: block; }
+
+/* Contenedor de carrusel */
+.container-proyectos {
+  margin-top: 130px;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  width: 150px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Proyecto */
+.proyecto {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  margin-bottom: 20px;
+  cursor: pointer;
+  background: var(--color-primary);
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-light);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Info */
+.project-info {
+  display: none;
+  position: absolute;
+  left: 200px;
+  margin-top: 130px;
+  padding: 20px;
+  width: 700px;
+  background: rgba(34, 114, 255, 0.41);
+  color: black;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.2px);
+  display: flex;
+  gap: 20px;
+}
+.project-info .text-content { flex: 1; }
+.project-info .media-content { flex: 1; }
+.project-info .software-logos img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
