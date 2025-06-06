@@ -1,21 +1,22 @@
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three/build/three.module.js';
+import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three/examples/jsm/loaders/GLTFLoader.js';
+
 console.log('bust-three.js cargado como módulo');
-import * as THREE from 'three';
-import { GLTFLoader } from './node_modules/three/examples/jsm/loaders/GLTFLoader.js';
 
-let scene, camera, renderer, model;
+// Inicializar escena, cámara y renderizador
+let scene, camera, renderer;
 
-function init() {
-  console.log('DOMContentLoaded — arrancando Three.js');
+function initThreeJS() {
   const container = document.getElementById('threejs-bust');
-  console.log('Contenedor:', container, 'size:', container.clientWidth, container.clientHeight);
-  if (!container) return console.error('No existe #threejs-bust');
+  if (!container) {
+    console.error('No existe #threejs-bust');
+    return;
+  }
 
-  // Escena y cámara  
   scene = new THREE.Scene();
   camera = new THREE.PerspectiveCamera(35, container.clientWidth / container.clientHeight, 0.1, 100);
   camera.position.set(0, 1.5, 3);
 
-  // Renderizador  
   renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   renderer.setSize(container.clientWidth, container.clientHeight);
   renderer.setPixelRatio(window.devicePixelRatio);
@@ -62,4 +63,4 @@ function animate() {
   renderer.render(scene, camera);
 }
 
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', initThreeJS);

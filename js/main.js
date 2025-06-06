@@ -90,21 +90,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Detectar el evento de scroll y aplicar la clase
     window.addEventListener('scroll', () => {
-        const hero = document.querySelector('.hero');
         const header = document.querySelector('header');
 
-        if (hero && header) {
+        if (header) {
             const scrollPosition = window.scrollY;
 
             if (scrollPosition > header.offsetHeight + 10) {
-                hero.style.position = 'fixed';
-                hero.style.top = '0';
+                header.style.position = 'fixed';
+                header.style.top = '0';
             } else {
-                hero.style.position = 'relative';
-                hero.style.top = 'auto';
+                header.style.position = 'relative';
+                header.style.top = 'auto';
             }
         } else {
-            console.error('Elementos hero o header no encontrados en el DOM.');
+            console.error('Elemento header no encontrado en el DOM.');
+        }
+    });
+
+    // Activar animación de .visible al hacer scroll
+    window.addEventListener("scroll", () => {
+        const visibleElement = document.querySelector(".visible");
+        const triggerPoint = window.innerHeight / 2; // Punto de activación en el scroll
+
+        if (visibleElement) {
+            const elementTop = visibleElement.getBoundingClientRect().top;
+
+            if (elementTop < triggerPoint) {
+                visibleElement.classList.add("animate"); // Activar animación
+            } else {
+                visibleElement.classList.remove("animate"); // Desactivar animación
+            }
         }
     });
 });

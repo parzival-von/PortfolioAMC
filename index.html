@@ -1,153 +1,195 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mi Portfolio</title>
-    <link rel="stylesheet" href="css/base/base.css">
-    <link rel="stylesheet" href="css/layout/layout.css">
-    <link rel="stylesheet" href="css/components/styles.css">
-    <link rel="stylesheet" href="css/components/header.css">
-    <link rel="stylesheet" href="css/components/footer.css">
-    <link rel="stylesheet" href="css/components/hero.css">
-      <link rel="stylesheet" href="css/components/hotspots.css">
-    <link rel="stylesheet" href="css/components/inicio.css">
-    <link rel="stylesheet" href="css/components/projects.css">
-    
-    <!-- 1. Dependencias externas cargadas primero -->
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-</head>
+    <link rel="stylesheet" href="css/base/base.css" />
+    <link rel="stylesheet" href="css/layout/layout.css" />
+    <link rel="stylesheet" href="css/components/styles.css" />
+    <link rel="stylesheet" href="css/components/header.css" />
+    <link rel="stylesheet" href="css/components/footer.css" />
+    <link rel="stylesheet" href="css/components/hero.css" />
+    <link rel="stylesheet" href="css/components/hotspots.css" />
+    <link rel="stylesheet" href="css/components/inicio.css" />
+    <link rel="stylesheet" href="css/components/projects.css" />
 
-<body>
+    <!-- 1. Dependencias externas cargadas primero -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+  </head>
+
+  <body>
     <header>
-        <div id="header"></div>
+      <div id="header"></div>
     </header>
-<main>
-    <div id="particles-js"></div>
-    <section id="proyectos" class="projects">
+    <main>
+      <div id="particles-js"></div>
+      <section id="proyectos" class="projects">
         <!-- Nombre y descripción -->
         <div class="hero">
-            <h1 class="underline-thick">Asier <br><span class="text-outline">Martínez Corona</span></h1>
-            <div class="underline-rect"></div>
+          <h1 class="underline-thick">
+            Asier <br /><span class="text-outline">Martínez Corona</span>
+          </h1>
+          <div class="underline-rect"></div>
+          <div class="content" style="margin-top: 2rem;">
+  <div class="visible" >
+    <p>Hello</p>
+    <ul>
+      <li>world !</li>
+      <li>Bob !</li>
+      <li>users !</li>
+    </ul>
+  </div>
+</div>
+
+          
         </div>
+        
+
 
         <!-- Círculo de proyectos -->
         <div class="circle-container">
-            <div class="central-item container-model">
-                <!-- Objeto 3D -->
-              <model-viewer src="/assets/models/ImageToStl.com_man_bust.glb" ar ar-modes="webxr scene-viewer quick-look"
-                  camera-controls touch-action="pan-y" camera-orbit="calc(-1rad - env(window-scroll-y) * 2rad) calc(100deg - env(window-scroll-y) * 90deg) calc(0m + env(window-scroll-y) * 5m)" tone-mapping="neutral" shadow-intensity="1.09" exposure="0.55" style="width: 80%; height: 80%;">
-
-                  <!-- Hotspot interactivo -->
-                  <!-- <button class="Hotspot" slot="hotspot-1" data-position="30.41002944518105m -145.98426103479414m -195.85662280174387m" data-normal="0.12390979746671431m 0.41227628618813017m -0.902593278248116m" data-visibility-attribute="visible">
+          <div class="central-item container-model">
+            <!-- Objeto 3D -->
+            <model-viewer
+              src="/assets/models/ImageToStl.com_man_bust.glb"
+              ar
+              ar-modes="webxr scene-viewer quick-look"
+              camera-controls
+              touch-action="pan-y"
+              camera-orbit="calc(-1rad - env(window-scroll-y) * 2rad) calc(100deg - env(window-scroll-y) * 90deg) calc(0m + env(window-scroll-y) * 5m)"
+              tone-mapping="neutral"
+              shadow-intensity="1.09"
+              exposure="0.55"
+              style="width: 80%; height: 80%"
+            >
+              <!-- Hotspot interactivo -->
+               <!-- <button class="Hotspot" slot="hotspot-1" data-position="30.41002944518105m -145.98426103479414m -195.85662280174387m" data-normal="0.12390979746671431m 0.41227628618813017m -0.902593278248116m" data-visibility-attribute="visible">
                       <div class="HotspotAnnotation">Experiencia</div>
-                  </button>
-
-                  <button class="Hotspot" slot="hotspot-2" data-position="187.16671190438376m -189.79333455305573m -22.627930157638275m" data-normal="-0.3873693771919351m 0.4630690918021439m 0.7971900537710376m" data-visibility-attribute="visible">
-                      <div class="HotspotAnnotation">Idiomas</div>
-                  </button>
-
-                  <button class="Hotspot" slot="hotspot-3" data-position="-148.75583275214677m -205.6815116218041m -55.00206664071516m" data-normal="0.5421952023767562m 0.31886870102357756m 0.7773976550177939m" data-visibility-attribute="visible">
-                      <div class="HotspotAnnotation">Estudios</div>
                   </button> -->
 
-                  <button class="Hotspot" slot="hotspot-4" data-position="37.51989713458498m 168.95150710109647m -5.27067445919684m" data-normal="0.3117896730757719m 0.8321940291025504m 0.4585196808091959m" data-visibility-attribute="visible">
-                      <div class="HotspotAnnotation">Mundos Interactivos</div>
+                  
+
+                  <!-- <button class="Hotspot" slot="hotspot-3" data-position="-148.75583275214677m -205.6815116218041m -55.00206664071516m" data-normal="0.5421952023767562m 0.31886870102357756m 0.7773976550177939m" data-visibility-attribute="visible">
+                      <div class="HotspotAnnotation">Estudios</div>
+                  </button>  -->
+
+              <button class="Hotspot" slot="hotspot-2" data-position="187.16671190438376m -189.79333455305573m -22.627930157638275m" data-normal="-0.3873693771919351m 0.4630690918021439m 0.7971900537710376m" data-visibility-attribute="visible">
+                      <div class="HotspotAnnotation">Fotografía</div>
                   </button>
 
-                  <button class="Hotspot" slot="hotspot-5" data-position="11.581423494609119m 174.84391373780295m -119.82441406596135m" data-normal="-0.4755873803284771m 0.879148375856953m -0.03024527897669384m" data-visibility-attribute="visible">
-                      <div class="HotspotAnnotation">Diseño Web</div>
-                  </button>
+              <button
+                class="Hotspot"
+                slot="hotspot-4"
+                data-position="37.51989713458498m 168.95150710109647m -5.27067445919684m"
+                data-normal="0.3117896730757719m 0.8321940291025504m 0.4585196808091959m"
+                data-visibility-attribute="visible"
+              >
+                <div class="HotspotAnnotation">Proyectos Interactivos</div>
+              </button>
 
-                  <button class="Hotspot" slot="hotspot-6" data-position="-62.95178101206953m 175.37618397679194m -66.42971228928386m" data-normal="-0.22547204232623486m 0.974088367286131m 0.01772599354271156m" data-visibility-attribute="visible">
-                      <div class="HotspotAnnotation">Arte Visual</div>
-                  </button>
+              <button
+                class="Hotspot"
+                slot="hotspot-5"
+                data-position="11.581423494609119m 174.84391373780295m -119.82441406596135m"
+                data-normal="-0.4755873803284771m 0.879148375856953m -0.03024527897669384m"
+                data-visibility-attribute="visible"
+              >
+                <div class="HotspotAnnotation">Diseño Web</div>
+              </button>
 
-                  <!-- Barra de progreso -->
-                  <div class="progress-bar hide" slot="progress-bar">
-                      <div class="update-bar"></div>
-                  </div>
+              <button
+                class="Hotspot"
+                slot="hotspot-6"
+                data-position="-62.95178101206953m 175.37618397679194m -66.42971228928386m"
+                data-normal="-0.22547204232623486m 0.974088367286131m 0.01772599354271156m"
+                data-visibility-attribute="visible"
+              >
+                <div class="HotspotAnnotation">Fabricación digital</div>
+              </button>
 
-                  <!-- Botón para Realidad Aumentada -->
-                  <button slot="ar-button" id="ar-button">
-                      View in your space
-                  </button>
-              </model-viewer>
-            </div>
+              <!-- Barra de progreso -->
+              <div class="progress-bar hide" slot="progress-bar">
+                <div class="update-bar"></div>
+              </div>
+            </model-viewer>
+          </div>
         </div>
-    </section>
-
-    <section id="descripcion" class="description">
-        <div class="description-container">
-        <h2 class="underline-thick">Sobre mí</h2>
-        <p>Hola, soy Asier Martínez Corona, un apasionado de la tecnología y el arte. Me especializo en crear experiencias interactivas que combinan la realidad aumentada, el diseño web y el arte visual. Mi objetivo es llevar la innovación a cada proyecto que realizo.</p>
-        <p>Con una sólida formación en programación y diseño, he trabajado en diversos proyectos que van desde aplicaciones web hasta experiencias de realidad virtual. Me encanta explorar nuevas tecnologías y encontrar formas creativas de aplicarlas.</p>
-        </div>
-    </section>
+      </section>
     </main>
 
     <div id="footer" class="footer-index"></div>
-    
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="js/particles-init.js"></script>
     <script type="module" src="js/bust-three.js"></script>
     <script>
-      particlesJS.load('particles-js', 'particlesjs-config.json', function() {
-        console.log('✨ Partículas cargadas correctamente');
+      particlesJS.load("particles-js", "particlesjs-config.json", function () {
+        console.log("✨ Partículas cargadas correctamente");
       });
     </script>
 
-
     <script>
-// Cargar el header desde un archivo HTML externo
-  fetch('components/header.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('header').innerHTML = html;
+      // Cargar el header desde un archivo HTML externo
+      fetch("components/header.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("header").innerHTML = html;
 
-      // Ejecutar el JS del menú hamburguesa DESPUÉS de insertar el header
-      const toggler = document.getElementById("toggleBtn");
-      const menu = document.getElementById("navMenu");
+          // Ejecutar el JS del menú hamburguesa DESPUÉS de insertar el header
+          const toggler = document.getElementById("toggleBtn");
+          const menu = document.getElementById("navMenu");
 
-      if (toggler && menu) {
-        toggler.addEventListener("click", () => {
-          menu.classList.toggle("active");
+          if (toggler && menu) {
+            toggler.addEventListener("click", () => {
+              menu.classList.toggle("active");
+            });
+          }
         });
-      }
-    });
 
-// Cargar el footer desde un archivo HTML externo
-fetch('components/footer.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('footer').innerHTML = html;
-    });
+      // Cargar el footer desde un archivo HTML externo
+      fetch("components/footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer").innerHTML = html;
+        });
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const hero = document.getElementById('hero');
-    const header = document.getElementById('header');
+      document.addEventListener("DOMContentLoaded", () => {
+        const hero = document.getElementById("hero");
+        const header = document.getElementById("header");
 
-    if (hero && header) {
-      window.addEventListener('scroll', () => {
-        const scrollPosition = window.scrollY;
+        if (hero && header) {
+          window.addEventListener("scroll", () => {
+            const scrollPosition = window.scrollY;
 
-        if (scrollPosition > header.offsetHeight + 10) {
-          hero.classList.add('fixed');
-          hero.classList.remove('initial');
+            if (scrollPosition > header.offsetHeight + 10) {
+              hero.classList.add("fixed");
+              hero.classList.remove("initial");
+            } else {
+              hero.classList.add("initial");
+              hero.classList.remove("fixed");
+            }
+          });
         } else {
-          hero.classList.add('initial');
-          hero.classList.remove('fixed');
+          console.error("Elementos hero o header no encontrados en el DOM.");
         }
       });
-    } else {
-      console.error('Elementos hero o header no encontrados en el DOM.');
-    }
-  });
-</script>
-</body>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  </body>
 </html>

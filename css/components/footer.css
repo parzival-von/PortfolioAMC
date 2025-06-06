@@ -1,22 +1,16 @@
 .footer {
-  background-color: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
   color: var(--color-light);
-  padding: 1rem 0;
   font-size: 0.9rem;
   text-align: center;
 }
 
 
 .footer-index {
-  position: fixed; /* Fijar el footer en la parte inferior */
-  bottom: 0; /* Asegurar que esté en la parte inferior */
-  width: 100%; /* Ajustar al ancho completo */
-  background-color: #333; /* Color de fondo acorde al diseño */
-  color: #fff; /* Color de texto acorde al diseño */
-  text-align: center; /* Centrar el contenido */
-  padding: 1rem; /* Espaciado interno */
-  z-index: 5; /* Asegurar que esté por encima de otros elementos */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--color-light);
+  font-size: 0.9rem;
+  text-align: center;
 }

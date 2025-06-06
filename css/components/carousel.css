@@ -1,0 +1,26 @@
+/* Estilos básicos para el carrusel */
+.carousel {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+.carousel-item {
+  flex: 0 0 auto;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+.carousel-controls {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+}
+.carousel-controls button {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}

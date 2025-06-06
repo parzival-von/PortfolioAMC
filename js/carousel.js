@@ -5,16 +5,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const proyectosSection = document.querySelector('.proyectos-section');
     let currentIndex = 0;
 
-    if (!projectInfo || !proyectosSection) {
+    // Validar existencia de elementos
+    if (!container || !projects.length || !projectInfo || !proyectosSection) {
         console.error('Elementos necesarios para el carrusel no encontrados');
         return;
     }
 
+    console.log('Elementos del carrusel cargados correctamente');
+
+    // Lógica del carrusel
     const projectDetails = [
         { 
             title: "OrbiTails", 
             content: "OrbiTails es un videojuego desarrollado como parte de nuestro trabajo final en Integración de Objetos Digitales. En este divertido título, tres astronautas animales –un cerdo, un gato y un conejo– se estrellan en un planeta desconocido y deben competir para recolectar materiales y construir sus bases antes que los demás. Durante la aventura, cada personaje enfrenta emocionantes desafíos, desde esquivar meteoritos hasta evitar a un travieso alienígena decidido a sabotear su progreso. La combinación de diseño atractivo, narrativa creativa y mecánicas interactivas hace de OrbiTails una experiencia entretenida y memorable. Este proyecto muestra nuestras capacidades técnicas en diseño de videojuegos, programación interactiva y narrativa visual, enfatizando nuestro enfoque en la creación de experiencias digitales únicas y cautivadoras.", 
-            software: "Mi rol y contribuciones:En este proyecto, me encargué de modelar, texturizar y animar a mi personaje, Piggy, un cerdo espacial que sufrió un accidente con su nave. Integré a Piggy en Unity, creé su avatar y configuré el animator con todas sus animaciones. Además, modelé y texturicé los materiales que los personajes recolectan en el juego (madera, engranajes y rubíes) y diseñé las estalagmitas y su textura de suelo con lava. También trabajé en el diseño de materiales y la interfaz de usuario en Illustrator, y realicé ajustes en Unity para asegurarme de que todo se viera y funcionara correctamente.",
+            software: "Mi rol y contribuciones: En este proyecto, me encargué de modelar, texturizar y animar a mi personaje, Piggy, un cerdo espacial que sufrió un accidente con su nave. Integré a Piggy en Unity, creé su avatar y configuré el animator con todas sus animaciones. Además, modelé y texturicé los materiales que los personajes recolectan en el juego (madera, engranajes y rubíes) y diseñé las estalagmitas y su textura de suelo con lava. También trabajé en el diseño de materiales y la interfaz de usuario en Illustrator, y realicé ajustes en Unity para asegurarme de que todo se viera y funcionara correctamente.",
             logos: ['img/logos/photoshop.png', 'img/logos/illustrator.png'],
             media: '<video src="video/proyecto1.mp4" controls></video>',
             backgroundImage: 'img/proyecto1.webp'

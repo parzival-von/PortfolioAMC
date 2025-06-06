@@ -1,7 +1,4 @@
 /*editar importante para cuadrarlo*/
-
-
-
 .container-text {
     width: 1200px !important;
     height: 1500px !important;
@@ -20,18 +17,7 @@
     align-items: center !important;
     z-index: 2 !important; /* Asegúrate de que esté por encima de otras secciones */
 }
-
-/* Sección de proyectos */
-.projects {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Asegura que el contenedor tenga suficiente altura */
-    padding: 20px;
-    overflow: auto; /* Permite el scroll */
-}
-
+/* Estilos para el modelo 3D */
 /* Modelo 3D */
 .central-item {
     position: fixed; /* Cambiar de relative a fixed */
@@ -47,8 +33,8 @@
 }
 
 model-viewer {
-    width: 100% !important;
-    height: 100% !important;
+    width: 90% !important;
+    height: 90% !important;
     background-color: transparent;
 }
 
@@ -122,90 +108,97 @@ model-viewer {
     justify-content: center;
     align-items: center;
 }
-/* Estilo para la sección de descripción */
-.description {
-    text-align: left; /* Justificar texto a la izquierda */
-    font-family: 'Lato', sans-serif; /* Mantener la estética de la web */
-    color: #333; /* Color de texto acorde al diseño */
-    line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
-    padding: 20px; /* Espaciado interno para estética */
-}
-
-.description h2 {
-    font-weight: 700; /* Título destacado */
-    margin-bottom: 15px; /* Separación del título con el contenido */
-}
-
-.description p {
-    margin-bottom: 10px; /* Separación entre párrafos */
-    overflow-wrap: break-word; /* Evitar desbordamiento de texto */
-    word-break: break-word; /* Ajustar palabras largas */
-}
-
-/* Ajustar especificidad para evitar conflictos */
-main .description {
-    text-align: left; /* Justificar texto a la izquierda */
-    font-family: 'Lato', sans-serif; /* Mantener la estética de la web */
-    color: #333; /* Color de texto acorde al diseño */
-    line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
-    padding: 20px; /* Espaciado interno para estética */
-}
-
-main .description h2 {
-    font-weight: 700; /* Título destacado */
-    margin-bottom: 15px; /* Separación del título con el contenido */
-}
-
-main .description p {
-    margin-bottom: 10px; /* Separación entre párrafos */
-    overflow-wrap: break-word; /* Evitar desbordamiento de texto */
-    word-break: break-word; /* Ajustar palabras largas */
-}
-
-/* Ajustar posición de la sección de descripción debajo del hero */
-#descripcion {
-    position: absolute; /* Posicionar sobre el modelo */
-    top: calc(100% + 20px); /* Ajustar posición vertical debajo del hero */
-    left: 5%; /* Ajustar posición horizontal */
-    margin: 0; /* Eliminar márgenes automáticos */
-    max-width: 400px; /* Ajustar ancho específico */
-    z-index: 4; /* Asegurar que esté por encima del modelo */
-    background: rgba(255,255,255,0.95);
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-    overflow-wrap: break-word; /* Ajusta el texto para evitar desbordamientos */
-    word-break: break-word; /* Rompe palabras largas */
-    max-height: 90vh; /* Limita la altura máxima */
-    overflow-y: auto; /* Permite el scroll si el contenido excede la altura */
-    text-align: left; /* Justificar texto a la izquierda */
-    font-family: 'Lato', sans-serif; /* Mantener la estética de la web */
-    line-height: 1.6; /* Mejorar la legibilidad */
-    color: #333; /* Color consistente con el diseño */
-    padding: 20px; /* Espaciado interno para estética */
-}
-
-#descripcion h2 {
-    margin-bottom: 15px; /* Separación entre título y párrafo */
-    font-weight: 700; /* Resaltar el título */
-}
-
-#descripcion p {
-    margin-bottom: 10px; /* Separación entre párrafos */
-}
-
-#proyectos {
-    position: relative; /* Para que el absolute de #descripcion sea relativo a esta sección */
-    background-color: transparent !important; /* Asegura que no se aplique ningún color de fondo */
-}
-#proyectos,
-#descripcion {
-    padding: 2rem;
-}
-
+/
 @media (max-width: 768px) {
   .container-model {
     width: 500px !important;
     height: 500px !important;
   }
 }
+
+
+/* Efecto cursor Hello */
+
+.content {
+  font-family: 'Lato', sans-serif;
+  font-size: 32px;
+  color: #ecf0f1;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.visible {
+  display: inline-block;
+}
+
+.visible p {
+  display: inline;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.visible ul {
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 40px;
+  vertical-align: top;
+}
+
+.visible ul li {
+  position: absolute;
+  text-color: var(--color-primary);
+  opacity: 0;
+  border-right: 2px solid var(--color-primary);
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 9s steps(10) infinite;
+}
+
+/* Mostrar uno a uno */
+.visible ul li:nth-child(1) {
+  animation-delay: 0s;
+}
+.visible ul li:nth-child(2) {
+  animation-delay: 3s;
+}
+.visible ul li:nth-child(3) {
+  animation-delay: 6s;
+}
+
+/* Efecto escribir y borrar */
+@keyframes typing {
+  0% {
+    opacity: 1;
+    width: 0ch;
+  }
+  10% {
+    width: 10ch;
+  }
+  30% {
+    width: 10ch;
+  }
+  40% {
+    width: 0ch;
+  }
+  41% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/* Cursor parpadeante */
+@keyframes blink {
+  0%, 100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--color-primary);
+  }
+}
+

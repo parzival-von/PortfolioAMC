@@ -1,9 +1,10 @@
 {
   "dependencies": {
     "http-server": "^14.1.1",
-    "particles.js": "^2.0.0"
+    "particles.js": "^2.0.0",
+    "three": "^0.177.0"
   },
   "scripts": {
-    "start": "http-server -p 8080"
+    "start": "http-server -p 8081"
   }
 }

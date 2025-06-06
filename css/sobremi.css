@@ -137,3 +137,16 @@ button:active::after {
   transition: 0s;
   transform: translate(0, 5%);
 }
+
+/* Estilo para el botón btn-primary */
+.btn-primary {
+  background-color: var(--color-primary)!important; /* Fondo con el color primario */
+  color: var(--color-light); /* Texto en color claro */
+  border: none; /* Eliminar borde */
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent); /* Cambiar a color de acento al pasar el cursor */
+}
+

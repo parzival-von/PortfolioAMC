@@ -1,86 +1,156 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Proyectos Interactivos</title>
-  <link rel="stylesheet" href="../css/base/base.css">
-  <link rel="stylesheet" href="../css/layout/layout.css">
-  <link rel="stylesheet" href="../css/components/header.css">
-  <link rel="stylesheet" href="../css/components/footer.css">
-  <link rel="stylesheet" href="../css/components/projects.css">
-  <link rel="stylesheet" href="../css/components/hotspots.css">
-  <link rel="stylesheet" href="../css/components/styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyectos Interactivos</title>
+
+    <!-- 1. Dependencias externas cargadas primero -->
+   
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+
+    <!-- 2. Tus estilos base y componentes vienen después -->
+
+    <link rel="stylesheet" href="../css/base/base.css" />
+    <link rel="stylesheet" href="../css/layout/layout.css" />
+    <link rel="stylesheet" href="css/components/header.css" />
+    <link rel="stylesheet" href="css/components/footer.css" />
+    <link rel="stylesheet" href="css/components/styles.css" />
+    <link rel="stylesheet" href="css/components/skills.css" />
+    <link rel="stylesheet" href="css/components/particles.css" />
+    <link rel="stylesheet" href="css/components/projects.css" />
+    <link rel="stylesheet" href="../css/components/carousel.css" />
+  </head>
+
+  <body>
     <div id="header"></div>
-    
-    
     <main>
-        <section id="proyectos">
-            <h2>Mis Proyectos</h2>
-            <nav class="bottom-navbar">
-                <ul>
-                    <li class="dropdown">
-                        <a href="javascript:void(0)" class="dropbtn">Mundos Interactivos</a>
-                        <div class="dropdown-content">
-                            <a class="item-content" href="ar.html">AR</a>
-                            <p class="item-content">VR</p>
-                            <p class="item-content">Videojuegos</p>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="javascript:void(0)" class="dropbtn">Diseño Web</a>
-                        <div class="dropdown-content">
-                            <p class="item-content">Websites</p>
-                            <p class="item-content">APP</p>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="javascript:void(0)" class="dropbtn">Arte Visual</a>
-                        <div class="dropdown-content">
-                            <p class="item-content">Modelado 3D</p>
-                            <p class="item-content">Fotografía</p>
-                            <p class="item-content">Impresión 3D</p>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-            <div class="container-proyectos">
-                <div class="proyecto">1</div>
-                <div class="proyecto">2</div>
-                <div class="proyecto">3</div>
-                <div class="proyecto">4</div>
-                <div class="proyecto">5</div>
-            </div>
-            <div class="project-info">
-                
-            </div>
-        </section>
+      <section id="proyectos">
+        <h2>Mis Proyectos</h2>
+        <div>
+            <ul>
+                <li>Proyectos Interactivos</li>
+                <li>Diseño Web</li>
+                <li>Fabricación Digital</li>
+                <li>Fotografía</li>
+            </ul>
+
+        </div>
+        <div class="container-proyectos">
+          <div class="proyecto">1</div>
+          <div class="proyecto">2</div>
+          <div class="proyecto">3</div>
+          <div class="proyecto">4</div>
+        </div>
+        <div class="project-info"></div>
+      </section>
+      <div id="threejs-bust"></div>
+      <div class="proyectos-section"></div>
     </main>
-    <footer class="footer">
-        <p>2025 Portfolio AMC. Todos los derechos reservados.</p>
-    </footer>
+    <div id="footer" class="footer-index"></div>
+
+    <div id="particles-js"></div>
     <script>
       // Detecta la ruta relativa correcta para el header
-      let headerPath = 'components/header.html';
+      let headerPath = "../components/header.html";
       fetch(headerPath)
-        .then(res => res.text())
-        .then(html => document.getElementById('header').innerHTML = html);
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error(`Error al cargar el header: ${res.status}`);
+          }
+          return res.text();
+        })
+        .then((html) => (document.getElementById("header").innerHTML = html))
+        .catch((err) => console.error(err));
     </script>
     <script src="js/main.js"></script>
     <script src="js/carousel.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <script src="js/particles-init.js"></script>
     <script type="module" src="js/bust-three.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
     <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <script>
-      particlesJS.load(
-        'particles-js',
-        'particlesjs-config.json',
-        () => console.log('✨ Particles cargados')
+      particlesJS.load("particles-js", "particlesjs-config.json", () =>
+        console.log("✨ Particles cargados")
       );
     </script>
-</body>
+    <script>
+      // Cargar el header desde un archivo HTML externo
+      fetch("components/header.html")
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error(`Error al cargar el header: ${res.status}`);
+          }
+          return res.text();
+        })
+        .then((html) => {
+          const headerElement = document.getElementById("header");
+          if (headerElement) {
+            headerElement.innerHTML = html;
+
+            // Ejecutar el JS del menú hamburguesa DESPUÉS de insertar el header
+            const toggler = document.getElementById("toggleBtn");
+            const menu = document.getElementById("navMenu");
+
+            if (toggler && menu) {
+              toggler.addEventListener("click", () => {
+                menu.classList.toggle("active");
+              });
+            }
+          } else {
+            console.error("Elemento header no encontrado en el DOM.");
+          }
+        })
+        .catch((err) => console.error(err));
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const header = document.getElementById("header");
+
+        if (header) {
+          window.addEventListener("scroll", () => {
+            const scrollPosition = window.scrollY;
+
+            if (scrollPosition > header.offsetHeight + 10) {
+              header.classList.add("fixed");
+              header.classList.remove("initial");
+            } else {
+              header.classList.add("initial");
+              header.classList.remove("fixed");
+            }
+          });
+        } else {
+          console.error("Elemento header no encontrado en el DOM.");
+        }
+
+        const footer = document.getElementById("footer");
+        if (footer) {
+          fetch("components/footer.html")
+            .then((res) => res.text())
+            .then((html) => {
+              footer.innerHTML = html;
+            })
+            .catch((err) => console.error("Error al cargar el footer:", err));
+        } else {
+          console.error("Elemento footer no encontrado en el DOM.");
+        }
+      });
+    </script>
+
+    <ul>
+      <li>
+        <ul>
+          <li>Subitem 1</li>
+          <li>Subitem 2</li>
+          <li>Subitem 3</li>
+          <li>Subitem 4</li>
+        </ul>
+      </li>
+    </ul>
+  </body>
 </html>
