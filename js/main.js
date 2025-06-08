@@ -131,10 +131,18 @@ document.addEventListener("DOMContentLoaded", () => {
         // Define data for each hotspot: 4 projects per category
         const projectsData = {
             '1': [
-                { title: 'Interactivo A', description: 'Descripción de Interactivo A', img: 'img/proyecto1.webp' },
-                { title: 'Interactivo B', description: 'Descripción de Interactivo B', img: 'img/proyecto1.webp' },
-                { title: 'Interactivo C', description: 'Descripción de Interactivo C', img: 'img/proyecto1.webp' },
-                { title: 'Interactivo D', description: 'Descripción de Interactivo D', img: 'img/proyecto1.webp' }
+                {
+                    title: 'OrbiTails',
+                    content: 'OrbiTails es un videojuego desarrollado como parte de nuestro trabajo final en Integración de Objetos Digitales. En este divertido título, tres astronautas animales –un cerdo, un gato y un conejo– se estrellan en un planeta desconocido y deben competir para recolectar materiales y construir sus bases antes que los demás. Durante la aventura, cada personaje enfrenta emocionantes desafíos, desde esquivar meteoritos hasta evitar a un travieso alienígena decidido a sabotear su progreso. La combinación de diseño atractivo, narrativa creativa y mecánicas interactivas hace de OrbiTails una experiencia entretenida y memorable. Este proyecto muestra nuestras capacidades técnicas en diseño de videojuegos, programación interactiva y narrativa visual, enfatizando nuestro enfoque en la creación de experiencias digitales únicas y cautivadoras.',
+                    software: 'Mi rol y contribuciones: En este proyecto, me encargué de modelar, texturizar y animar a mi personaje, Piggy, un cerdo espacial que sufrió un accidente con su nave. Integré a Piggy en Unity, creé su avatar y configuré el animator con todas sus animaciones. Además, modelé y texturicé los materiales que los personajes recolectan en el juego (madera, engranajes y rubíes) y diseñé las estalagmitas y su textura de suelo con lava. También trabajé en el diseño de materiales y la interfaz de usuario en Illustrator, y realicé ajustes en Unity para asegurarme de que todo se viera y funcionara correctamente.',
+                    logos: [
+                        '<i class="fab fa-adobe"></i>',  // Logo Photoshop desde Font Awesome
+                        '<span class="iconify" data-icon="mdi:adobe-illustrator" data-inline="false"></span>' // Logo Illustrator desde Iconify
+                    ],
+                    media: '<video src="video/proyecto1.mp4" controls></video>',
+                    backgroundImage: 'img/proyecto1.webp',
+                    emoji: '🎮'
+                }
             ],
             '2': [
                 { title: 'Web A', description: 'Descripción de Web A', img: 'img/proyecto1.webp' },
@@ -157,13 +165,16 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         function renderProjects(key) {
-            container.innerHTML = ''; // clear existing
+            container.innerHTML = '';
             info.innerHTML = '';
             const list = projectsData[key] || [];
             list.forEach((p, index) => {
                 const div = document.createElement('div');
                 div.className = 'proyecto';
-                div.textContent = p.title;
+                div.textContent = `${p.emoji || ''} ${p.title}`;
+                if (p.backgroundImage) {
+                    div.style.backgroundImage = `url(${p.backgroundImage})`;
+                }
                 div.dataset.index = index;
                 container.appendChild(div);
                 div.addEventListener('click', () => showInfo(key, index));
@@ -172,10 +183,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         function showInfo(key, idx) {
             const p = projectsData[key][idx];
+            container.style.backgroundImage = p.backgroundImage ? `url(${p.backgroundImage})` : '';
             info.innerHTML = `
-              <h3>${p.title}</h3>
-              <p>${p.description}</p>
-              <img src="${p.img}" alt="${p.title}" class="img-fluid" />
+                <h3>${p.emoji || ''} ${p.title}</h3>
+                <p>${p.content}</p>
+                <p>${p.software}</p>
+                <div class="logos">
+                    ${p.logos.join('')}
+                </div>
+                <div class="media">
+                    ${p.media}
+                </div>
             `;
         }
 

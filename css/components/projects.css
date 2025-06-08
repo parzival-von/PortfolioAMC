@@ -7,6 +7,7 @@
   display: flex;
   background-size: cover;
   background-position: center;
+  background-image: none !important; /* Quitar fondo de fotografía */
 }
 
 .circle-container {
@@ -45,16 +46,16 @@
 
 /* Contenedor de carrusel */
 .container-proyectos {
-  margin-top: 130px;
+  position: absolute;
+  top: 200px;        /* más abajo para quedar bajo el submenu */
+  bottom: 20px;      /* hasta cerca del footer */
+  left: 0;
+  width: 150px;
   padding-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  position: absolute;
-  left: 0;
-  width: 150px;
-  height: 100%;
   overflow-y: auto;
 }
 
@@ -78,12 +79,14 @@
 
 /* Info */
 .project-info {
-  display: none;
+  display: flex;
+  flex-direction: column;
   position: absolute;
+  top: 300px;        /* más abajo para quedar bajo el submenu */
+  bottom: 20px;      /* hasta cerca del footer */
   left: 200px;
-  margin-top: 130px;
   padding: 20px;
-  width: 700px;
+  max-width: calc(100% - 220px); /* ajusta al ancho restante */
   background: rgba(34, 114, 255, 0.41);
   color: black;
   border-radius: 16px;
@@ -91,14 +94,58 @@
   backdrop-filter: blur(9.2px);
   display: flex;
   gap: 20px;
+  overflow-y: auto;   /* permite scroll si el texto es muy largo */
 }
-.project-info .text-content { flex: 1; }
-.project-info .media-content { flex: 1; }
-.project-info .software-logos img {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
+
+/* Contenido de texto */
+.project-info .text-content {
+  flex: none;
+  padding-bottom: 10px;
 }
+
+/* Contenedor del slider */
+.media-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Slides internas */
+.media-slider .slides {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.media-slider .slide {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+/* Flechas navegación */
+.media-slider .prev,
+.media-slider .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+.media-slider .prev { left: 10px; }
+.media-slider .next { right: 10px; }
 
 /* Remove default list decorations in proyectos section */
 #proyectos ul {
@@ -153,4 +200,9 @@
     margin: 0.5rem 0;
     flex: none;
   }
+}
+
+/* Ocultar sección de fondo de proyectos */
+.proyectos-section {
+  display: none !important;
 }
