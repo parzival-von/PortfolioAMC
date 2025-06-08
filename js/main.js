@@ -122,4 +122,77 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     });
+
+    // Dynamic projects rendering for AR page
+    const container = document.getElementById('container-proyectos');
+    const info = document.getElementById('project-info');
+    if (container && info) {
+        const hotspots = document.querySelectorAll('.Hotspot[data-hotspot]');
+        // Define data for each hotspot: 4 projects per category
+        const projectsData = {
+            '1': [
+                { title: 'Interactivo A', description: 'Descripción de Interactivo A', img: 'img/proyecto1.webp' },
+                { title: 'Interactivo B', description: 'Descripción de Interactivo B', img: 'img/proyecto1.webp' },
+                { title: 'Interactivo C', description: 'Descripción de Interactivo C', img: 'img/proyecto1.webp' },
+                { title: 'Interactivo D', description: 'Descripción de Interactivo D', img: 'img/proyecto1.webp' }
+            ],
+            '2': [
+                { title: 'Web A', description: 'Descripción de Web A', img: 'img/proyecto1.webp' },
+                { title: 'Web B', description: 'Descripción de Web B', img: 'img/proyecto1.webp' },
+                { title: 'Web C', description: 'Descripción de Web C', img: 'img/proyecto1.webp' },
+                { title: 'Web D', description: 'Descripción de Web D', img: 'img/proyecto1.webp' }
+            ],
+            '3': [
+                { title: 'Fabricación A', description: 'Descripción de Fabricación A', img: 'img/proyecto1.webp' },
+                { title: 'Fabricación B', description: 'Descripción de Fabricación B', img: 'img/proyecto1.webp' },
+                { title: 'Fabricación C', description: 'Descripción de Fabricación C', img: 'img/proyecto1.webp' },
+                { title: 'Fabricación D', description: 'Descripción de Fabricación D', img: 'img/proyecto1.webp' }
+            ],
+            '4': [
+                { title: 'Foto A', description: 'Descripción de Foto A', img: 'img/proyecto1.webp' },
+                { title: 'Foto B', description: 'Descripción de Foto B', img: 'img/proyecto1.webp' },
+                { title: 'Foto C', description: 'Descripción de Foto C', img: 'img/proyecto1.webp' },
+                { title: 'Foto D', description: 'Descripción de Foto D', img: 'img/proyecto1.webp' }
+            ]
+        };
+
+        function renderProjects(key) {
+            container.innerHTML = ''; // clear existing
+            info.innerHTML = '';
+            const list = projectsData[key] || [];
+            list.forEach((p, index) => {
+                const div = document.createElement('div');
+                div.className = 'proyecto';
+                div.textContent = p.title;
+                div.dataset.index = index;
+                container.appendChild(div);
+                div.addEventListener('click', () => showInfo(key, index));
+            });
+        }
+
+        function showInfo(key, idx) {
+            const p = projectsData[key][idx];
+            info.innerHTML = `
+              <h3>${p.title}</h3>
+              <p>${p.description}</p>
+              <img src="${p.img}" alt="${p.title}" class="img-fluid" />
+            `;
+        }
+
+        hotspots.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // mark active hotspot
+                hotspots.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                // render projects for selected hotspot
+                renderProjects(btn.dataset.hotspot);
+            });
+        });
+        // Show interactive projects by default on page load
+        renderProjects('1');
+        // mark first hotspot active by default
+        if (hotspots.length) {
+            hotspots[0].classList.add('active');
+        }
+    }
 });

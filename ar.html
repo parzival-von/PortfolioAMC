@@ -19,33 +19,34 @@
     <link rel="stylesheet" href="css/components/header.css" />
     <link rel="stylesheet" href="css/components/footer.css" />
     <link rel="stylesheet" href="css/components/styles.css" />
-    <link rel="stylesheet" href="css/components/skills.css" />
     <link rel="stylesheet" href="css/components/particles.css" />
     <link rel="stylesheet" href="css/components/projects.css" />
     <link rel="stylesheet" href="../css/components/carousel.css" />
+    <link rel="stylesheet" href="css/components/hotspots.css">
   </head>
 
   <body>
     <div id="header" class="navbar "></div>
     <main>
       <section id="proyectos">
+        <div>
         <h2>Mis Proyectos</h2>
         <div>
-            <ul>
-                <li>Proyectos Interactivos</li>
-                <li>Diseño Web</li>
-                <li>Fabricación Digital</li>
-                <li>Fotografía</li>
+            <ul class="hotspot-menu">
+                <li><button class="Hotspot" data-hotspot="1">Proyectos Interactivos</button></li>
+                <li><button class="Hotspot" data-hotspot="2">Diseño Web</button></li>
+                <li><button class="Hotspot" data-hotspot="3">Fabricación Digital</button></li>
+                <li><button class="Hotspot" data-hotspot="4">Fotografía</button></li>
             </ul>
-
+          </div>
         </div>
-        <div class="container-proyectos">
+        <div class="container-proyectos" id="container-proyectos">
           <div class="proyecto">1</div>
           <div class="proyecto">2</div>
           <div class="proyecto">3</div>
           <div class="proyecto">4</div>
         </div>
-        <div class="project-info"></div>
+        <div class="project-info" id="project-info"></div>
       </section>
       <div id="threejs-bust"></div>
       <div class="proyectos-section"></div>
@@ -141,16 +142,5 @@
         }
       });
     </script>
-
-    <ul>
-      <li>
-        <ul>
-          <li>Subitem 1</li>
-          <li>Subitem 2</li>
-          <li>Subitem 3</li>
-          <li>Subitem 4</li>
-        </ul>
-      </li>
-    </ul>
   </body>
 </html>

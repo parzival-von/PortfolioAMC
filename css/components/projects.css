@@ -99,3 +99,58 @@
   height: 30px;
   margin-right: 10px;
 }
+
+/* Remove default list decorations in proyectos section */
+#proyectos ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#proyectos ul li {
+  list-style: none;
+}
+
+/* Submenu horizontal with equal spacing and responsive vertical scroll */
+.hotspot-menu-container {
+  margin-bottom: 1.5rem;
+}
+.hotspot-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--glass-bg);
+  backdrop-filter: blur(9.2px);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.hotspot-menu li {
+  list-style: none;
+  margin: 0 0.75rem;
+  flex: 1;
+  text-align: center;
+}
+.hotspot-menu .Hotspot {
+  background: transparent;
+  border: none;
+  color: var(--light);
+  font-weight: 600;
+  transition: color .3s;
+}
+.hotspot-menu .Hotspot:hover {
+  color: var(--primary);
+}
+@media (max-width: 768px) {
+  .hotspot-menu {
+    flex-direction: column;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 0.5rem;
+  }
+  .hotspot-menu li {
+    margin: 0.5rem 0;
+    flex: none;
+  }
+}

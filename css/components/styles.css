@@ -80,3 +80,8 @@ section {
   pointer-events: none;   /* para que no interfiera clics */
   background: var(--color-bg);
 }
+
+/* Override Bootstrap .text-muted para fondos oscuros */
+.text-muted {
+  color: rgba(255,255,255,0.7) !important;
+}
