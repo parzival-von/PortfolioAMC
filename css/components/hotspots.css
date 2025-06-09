@@ -40,3 +40,30 @@
   background: var(--color-primary);
   transition: width .3s;
 }
+
+
+
+.Hotspot.active {
+  /* Estilo "activado": más opaco y sin efecto glass */
+  backdrop-filter: none;
+  opacity: 1;
+  box-shadow: 0 0 0 transparent;
+}
+
+/* Estilo para el menú en dispositivos móviles */
+@media (max-width: 768px) {
+  .hotspot-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .hotspot-menu .Hotspot {
+    font-size: 12px;
+    padding: 5px 10px;
+    flex: 1 1 auto;
+    max-width: 100px;
+  }
+}
