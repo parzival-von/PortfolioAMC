@@ -67,7 +67,7 @@
           <div class="central-item container-model">
             <!-- Objeto 3D -->
             <model-viewer
-              src="/assets/models/ImageToStl.com_man_bust.glb"
+              src="./assets/models/ImageToStl.com_man_bust.glb"
               ar
               ar-modes="webxr scene-viewer quick-look"
               camera-controls
@@ -89,17 +89,11 @@
                       <div class="HotspotAnnotation">Estudios</div>
                   </button>  -->
 
-              <button class="Hotspot" slot="hotspot-2" data-position="187.16671190438376m -189.79333455305573m -22.627930157638275m" data-normal="-0.3873693771919351m 0.4630690918021439m 0.7971900537710376m" data-visibility-attribute="visible">
+              <button class="Hotspot" slot="hotspot-2" data-position="187.16671190438376m -189.79333455305573m -22.627930157638275m" data-normal="-0.3873693771919351m 0.4630690918021439m 0.7971900537710376m" data-visibility-attribute="visible" onclick="window.location.href='ar.html?tema=fotografia'">
                       <div class="HotspotAnnotation">Fotografía</div>
                   </button>
 
-              <button
-                class="Hotspot"
-                slot="hotspot-4"
-                data-position="37.51989713458498m 168.95150710109647m -5.27067445919684m"
-                data-normal="0.3117896730757719m 0.8321940291025504m 0.4585196808091959m"
-                data-visibility-attribute="visible"
-              >
+              <button class="Hotspot" slot="hotspot-4" data-position="37.51989713458498m 168.95150710109647m -5.27067445919684m" data-normal="0.3117896730757719m 0.8321940291025504m 0.4585196808091959m" data-visibility-attribute="visible" onclick="window.location.href='ar.html?tema=interactivos'">
                 <div class="HotspotAnnotation">Proyectos Interactivos</div>
               </button>
 
@@ -109,6 +103,7 @@
                 data-position="11.581423494609119m 174.84391373780295m -119.82441406596135m"
                 data-normal="-0.4755873803284771m 0.879148375856953m -0.03024527897669384m"
                 data-visibility-attribute="visible"
+                onclick="window.location.href='ar.html?tema=web'"
               >
                 <div class="HotspotAnnotation">Diseño Web</div>
               </button>
@@ -119,6 +114,7 @@
                 data-position="-62.95178101206953m 175.37618397679194m -66.42971228928386m"
                 data-normal="-0.22547204232623486m 0.974088367286131m 0.01772599354271156m"
                 data-visibility-attribute="visible"
+                onclick="window.location.href='ar.html?tema=fabricacion'"
               >
                 <div class="HotspotAnnotation">Fabricación digital</div>
               </button>

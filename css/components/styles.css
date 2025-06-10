@@ -82,6 +82,6 @@ section {
 }
 
 /* Override Bootstrap .text-muted para fondos oscuros */
-.text-muted {
+.timeline .text-muted {
   color: rgba(255,255,255,0.7) !important;
 }
