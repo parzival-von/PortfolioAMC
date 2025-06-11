@@ -56,56 +56,63 @@ const proyectosPorTema = {
   ],
   "web": [
     {
-      "titulo": "Portfolio Personal",
-      "descripcion": "Sitio web responsive construido con Bootstrap y Vue.",
+      "titulo": "Unió de Fotògrafs Castellers",
+      "descripcion": "Unió de Fotògrafs Castellers es un proyecto colaborativo que da visibilidad al trabajo de fotógrafas y fotógrafos que documentan la tradición castellera. La web centraliza enlaces a galerías fotográficas y presenta perfiles personales de cada participante.",
       "programas": [
-        "Vue",
-        "Bootstrap",
-        "Figma"
+        "Wordpress",
       ],
-      "enlace": "https://portfolio-personal.com",
+      "enlace": "https://asiercorona.es/wordpress14/",
       "media": {
         "imagenes": [
-          "img/web1.jpg"
+          "img/webFotografs/fotografsCastellers1.png"
         ],
-        "video": "video/portfolio-demo.mp4"
+        // "video": "video/portfolio-demo.mp4"
+      }
+    },
+    {
+      "titulo": "Galactic Assault I.A.",
+      "descripcion": "Videojuego de naves espaciales desarrollado con el uso de inteligencia artificial. El objetivo del juego es acumular la máxima puntuación posible recolectando monedas y evitando el impacto con naves enemigas. Los jugadores pueden disparar a las naves enemigas y obtener vidas adicionales para continuar jugando. El juego es un emocionante desafío para mantener las vidas y tropas de defensa mientras se intenta alcanzar la mayor puntuación posible.",
+      "programas": [
+        "Wordpress",
+      ],
+      "enlace": "https://galactic-assault.vercel.app",
+      "media": {
+        "imagenes": [
+          "img/galacticAssault/galacticAssault1.png"
+        ],
+        //"video": "video/Grabación de pantalla 2025-06-11 a las 16.19.10.mov"
       }
     }
   ],
   "fabricacion": [
     {
-      "titulo": "Prototipo CNC",
-      "descripcion": "Dise\u00f1o de piezas para impresi\u00f3n y corte CNC.",
+      "titulo": "Lampara Modular",
+      "descripcion": "Esta lámpara modular está diseñada y fabricada con tecnología de impresión 3D, ofreciendo una estética única y personalizable. Compuesta por múltiples piezas intercambiables —base, bombilla, caperuza, arandela, casquillo y pantalla—, permite una fácil sustitución o combinación de componentes. Fabricada en materiales resistentes y ligeros, es perfecta para ambientes interiores modernos, estudios, escritorios o como pieza decorativa principal.",
       "programas": [
         "Fusion 360",
         "Rhino",
-        "Onshape"
+        "Impresión 3D"
       ],
-      "enlace": "https://prototipo-cnc.com",
+      "enlace": "img/lamparaModular/Proyectos de impresión 3D (Presentación).pdf",
       "media": {
         "imagenes": [
-          "img/cnc1.jpg"
+          "img/lamparaModular/Lampara_componentes.png"
         ],
-        "video": "video/cnc-demo.mp4"
+        //"video": "video/cnc-demo.mp4"
       }
     }
   ],
   "fotografia": [
     {
-      "titulo": "Serie Urbana",
-      "descripcion": "Fotograf\u00eda de escenas urbanas nocturnas.",
-      "programas": [
-        "Lightroom",
-        "Photoshop"
-      ],
-      "enlace": "https://serie-urbana.com",
+      "titulo": "Instagram Feed",
+      "descripcion": "Mira mis últimas fotos en Instagram (@ottermarc):",
+      "programas": ["Lightroom", "Photoshop"],
+      "enlace": "https://instagram.com/ottermarc",
       "media": {
-        "imagenes": [
-          "img/foto1.jpg",
-          "img/foto2.jpg"
-        ],
-        "video": "video/foto-demo.mp4"
-      }
+        "imagenes": [],
+        "video": ""
+      },
+      "instagramFeed": true
     }
   ]
 };

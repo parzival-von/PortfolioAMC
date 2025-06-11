@@ -41,7 +41,26 @@
   font-weight: 600;
 }
 
+.badge-tech:hover, .badge-tech:focus {
+  background: var(--color-primary) !important;
+  color: #fff !important;
+  transition: background 0.2s, color 0.2s;
+}
+.skill-list .badge-tech-static:hover,
+.skill-list .badge-tech-static:focus,
+.skill-list .badge-tech-static:active {
+  background: inherit !important;
+  color: inherit !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+  cursor: default !important;
+  outline: none !important;
+  filter: none !important;
+  transform: none !important;
+}
+
 .skill-card h5 {
 
-  border-bottom: 5px solid var(--glass-border)
+  border-bottom: 5px solid var(--glass-border) !important;
 }
+

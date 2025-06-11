@@ -43,6 +43,22 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function mostrarInfo(proy) {
+    // Feed Instagram especial
+    if (proy.instagramFeed) {
+      info.innerHTML = `
+        <div class="text-content">
+          <h3>${proy.titulo}</h3>
+          <p>${proy.descripcion}</p>
+          <a href="${proy.enlace}" target="_blank" class="btn btn-primary mt-2">Ver en Instagram</a>
+        </div>
+        <div class="media-content d-flex justify-content-center align-items-center">
+          <!-- Instagram embed: usuario real -->
+          <iframe src="https://www.instagram.com/ottermarc/embed" width="400" height="480" frameborder="0" scrolling="no" allowtransparency="true" style="border-radius:16px; background:#fff;"></iframe>
+        </div>
+      `;
+      info.style.display = "flex";
+      return;
+    }
     if (!proy || !proy.programas || !proy.media || !proy.media.imagenes) {
       info.innerHTML = '<div class="text-content">No hay información disponible para este proyecto.</div>';
       info.style.display = "flex";
@@ -97,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
       <div class="media-content">
         <div class="mb-2">
-          ${proy.media.imagenes.map(img => `<img src="${img}" class="img-fluid rounded mb-2" alt="">`).join("")}
+          ${proy.media.imagenes.map(img => `<img src="${img}" class="img-fluid rounded mb-2 project-img-zoom" alt="">`).join("")}
         </div>
         ${proy.media.video ? `<video controls width="100%" class="rounded">
           <source src="${proy.media.video}" type="video/mp4">
@@ -105,6 +121,49 @@ document.addEventListener("DOMContentLoaded", () => {
         </video>` : ''}
       </div>
     `;
+    // Añadir funcionalidad de zoom a las imágenes
+    setTimeout(() => {
+      document.querySelectorAll('.project-img-zoom').forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (!img.classList.contains('zoomed')) {
+            img.classList.add('zoomed');
+            img.style.position = 'fixed';
+            img.style.zIndex = '9999';
+            img.style.left = '50%';
+            img.style.top = '50%';
+            img.style.transform = 'translate(-50%, -50%) scale(1)';
+            img.style.width = 'auto';
+            img.style.height = 'auto';
+            img.style.maxWidth = '90vw';
+            img.style.maxHeight = '90vh';
+            img.style.boxShadow = '0 0 40px 10px rgba(0,0,0,0.7)';
+            img.style.background = '#fff';
+            img.style.borderRadius = '16px';
+            img.style.cursor = 'zoom-out';
+            document.body.style.overflow = 'hidden';
+
+            // Cerrar al hacer clic fuera
+            function closeZoom(ev) {
+              if (ev.target !== img) {
+                img.classList.remove('zoomed');
+                img.removeAttribute('style');
+                document.body.style.overflow = '';
+                document.removeEventListener('click', closeZoom, true);
+              }
+            }
+            setTimeout(() => {
+              document.addEventListener('click', closeZoom, true);
+            }, 0);
+          } else {
+            img.classList.remove('zoomed');
+            img.removeAttribute('style');
+            document.body.style.overflow = '';
+          }
+        });
+      });
+    }, 0);
     info.style.display = "flex";
   }
 
