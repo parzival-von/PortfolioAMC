@@ -33,9 +33,7 @@
 </head>
 <body>
     <div id="particles-js"></div>
-    <header>
-    <div id="header" class="navbar"></div>
-    
+      <div id="header"></div>    
   <main>
     <!-- Sección Sobre mí -->
     <section id="about-me" class="py-5">
@@ -45,13 +43,13 @@
           <div class="col-12 col-md-5 mb-4 mb-md-0 parent" data-aos="fade-right">
             <div class="central-item container model-padding-mobile">
               <!-- Objeto 3D -->
-              <model-viewer src="assets/models/0131_01_tex.glb" ar ar-modes="webxr scene-viewer quick-look"
-                  camera-controls  camera-orbit="calc(-1rad - env(window-scroll-y) * 2rad) calc(100deg - env(window-scroll-y) * 90deg) calc(0m + env(window-scroll-y) * 5m)" tone-mapping="neutral" poster="assets/images/poster.webp" shadow-intensity="1.09" exposure="0.55" style="width: 80%; height: 80%;">
+              <model-viewer src="assets/models/0131_01_tex.glb"
+                   camera-orbit="calc(-1rad - env(window-scroll-y) * 2rad) calc(100deg - env(window-scroll-y) * 90deg) calc(0m + env(window-scroll-y) * 5m)" tone-mapping="neutral"  shadow-intensity="1.09" exposure="0.55" style="width: 80%; height: 80%;">
               </model-viewer>
           </div>
           </div>
           <!-- Texto "Sobre mí" después -->
-          <div class="col-12 col-md-7" data-aos="fade-left">
+          <div class="col-12 col-md-7 padingmov" data-aos="fade-left">
             <h2 class="fw-bold mb-3">Sobre mí</h2>
             <p>Diseñador web y especialista en modelado 3D con experiencia en fabricación digital y tecnologías interactivas. Mi trabajo se centra en la creación de interfaces intuitivas, experiencias digitales innovadoras y soluciones visuales impactantes.</p>
             <p>Cuento con experiencia en diseño UX/UI, prototipado digital y desarrollo frontend, combinando herramientas como <strong>Figma</strong>, <strong>Vite</strong>, <strong>Vue.js</strong> y <strong>Bootstrap</strong> para la creación de interfaces web modernas y funcionales.</p>
@@ -191,39 +189,69 @@
 
 
 <script>
-// Cargar el header desde un archivo HTML externo
-  fetch('components/header.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('header').innerHTML = html;
+      // Cargar el header desde un archivo HTML externo
+      fetch("./components/header.html")
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error(`Error al cargar el header: ${res.status}`);
+          }
+          return res.text();
+        })
+        .then((html) => {
+          const headerElement = document.getElementById("header");
+          if (headerElement) {
+            headerElement.innerHTML = html;
 
-      // Ejecutar el JS del menú hamburguesa DESPUÉS de insertar el header
-      const toggler = document.getElementById("toggleBtn");
-      const menu = document.getElementById("navMenu");
+            // Ejecutar el JS del menú hamburguesa DESPUÉS de insertar el header
+            const toggler = document.getElementById("toggleBtn");
+            const menu = document.getElementById("navMenu");
 
-      if (toggler && menu) {
-        toggler.addEventListener("click", () => {
-          menu.classList.toggle("active");
-        });
+            if (toggler && menu) {
+              toggler.addEventListener("click", () => {
+                menu.classList.toggle("active");
+              });
+            }
+          } else {
+            console.error("Elemento header no encontrado en el DOM.");
+          }
+        })
+        .catch((err) => console.error(err));
+
+      // Cargar el footer desde un archivo HTML externo
+      const footer = document.getElementById("footer");
+      if (footer) {
+        fetch("./components/footer.html")
+          .then((res) => res.text())
+          .then((html) => {
+            footer.innerHTML = html;
+          })
+          .catch((err) => console.error("Error al cargar el footer:", err));
+      } else {
+        console.error("Elemento footer no encontrado en el DOM.");
       }
-    });
 
-// Cargar el footer desde un archivo HTML externo
-fetch('components/footer.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('footer').innerHTML = html;
-    });
-</script>
-
+      console.log("DOM completamente cargado y listo para ejecutar scripts.");
+    </script>
 <style>
 /* Solo en móvil: padding-top para separar el model-viewer del header */
 @media (max-width: 767.98px) {
   .model-padding-mobile {
-    padding-top: 70px; /* Ajusta el valor según la altura de tu header */
+    padding-top: 100px; /* Ajusta el valor según la altura de tu header */
   }
+  .padingmov {
+    padding-top: 200px; /* Ajusta el valor según tus necesidades */
+  }
+  #header {
+  
+    width: 100%;
+    z-index: 1; /* Asegúrate de que el header esté por encima del model-viewer */
+  }
+  
 }
 </style>
+
+<!-- Contenedor para el busto 3D de Three.js -->
+<div id="threejs-bust" style="width:100%;height:400px;"></div>
 
 
 </body>

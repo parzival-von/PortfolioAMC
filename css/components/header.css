@@ -31,9 +31,12 @@
   header {
     padding: 20px;
     text-align: left;
+    position: relative!important;
+    top: auto!important;
   }
   #header {
     flex-direction: row;
     gap: 20px;
   }
+  
 }
