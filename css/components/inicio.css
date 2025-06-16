@@ -111,9 +111,15 @@ model-viewer {
 /
 @media (max-width: 768px) {
   .container-model {
-    width: 500px !important;
-    height: 500px !important;
+    width: 200px !important;
+    height: 200px !important;
   }
+
+  model-viewer {
+    width: 50% !important;
+    height: 50% !important;
+    background-color: transparent;
+}
 }
 
 
