@@ -1,0 +1,79 @@
+{
+  "header.title": "AMC Portfoli",
+  "header.home": "Inici",
+  "header.about": "Sobre mi",
+  "header.projects": "Projectes",
+  "header.contact": "Contacte",
+  "footer.copyright": "2025 Portfoli Asier Martinez Corona. Tots els drets reservats.",
+  "hero": {
+    "name": "Asier",
+    "surname": "Martínez Corona",
+    "greeting": "Hola",
+    "maker": "maker !",
+    "portal": "portal !",
+    "world": "world !"
+  },
+  "hotspot": {
+    "photography": "Fotografia",
+    "interactive": "Projectes Interactius",
+    "web": "Disseny Web",
+    "fabrication": "Fabricació digital"
+  },
+  "experience": {
+    "title": "Experiència Professional",
+    "more": "Veure més",
+    "jobs": [
+      {
+        "title": "Ajudant de creació de contingut",
+        "company": "Croqueta de Xocolata · set. 2022 – març 2025",
+        "desc": "Vaig editar vídeos per a Instagram, TikTok i YouTube adaptant el format al públic objectiu.<br>Vaig planificar estratègies de contingut setmanals basades en tendències actuals.<br>Vaig supervisar el rendiment de les publicacions i vaig optimitzar l'engagement."
+      },
+      {
+        "title": "Gestor de Comunicació Digital i Continguts",
+        "company": "UAB – Unitat de Dinamització Comunitària · oct. 2023 – jul. 2024",
+        "desc": "Vaig desenvolupar i mantenir llocs web a WordPress enfocats a la promoció d'esdeveniments.<br>Vaig dissenyar materials gràfics i contingut visual per a la difusió interna i externa.<br>Vaig coordinar campanyes de comunicació a xarxes socials i correu electrònic."
+      },
+      {
+        "title": "Assistent en Projectes de Comunicació",
+        "company": "Institut d'Innovació Social Esade · abr. 2023 – març 2024",
+        "desc": "Vaig coordinar esdeveniments i activitats amb enfocament participatiu i d'impacte social.<br>Vaig donar suport al disseny i execució d'estratègies de comunicació digital a xarxes socials."
+      },
+      {
+        "title": "Tècnic de So en Esdeveniments en Viu",
+        "company": "Grup Jaume Muntaner · Set. 2019 – Març 2020",
+        "desc": "Vaig instal·lar i operar sistemes de so per a espectacles en viu.<br>Vaig gravar, mesclar i editar àudio per a esdeveniments i produccions audiovisuals.<br>Vaig resoldre problemes tècnics en temps real, assegurant un so professional i constant."
+      }
+    ]
+  },
+  "about": {
+    "title": "Sobre mi",
+    "desc1": "Dissenyador web i especialista en modelatge 3D amb experiència en fabricació digital i tecnologies interactives. El meu treball se centra en la creació d'interfícies intuïtives, experiències digitals innovadores i solucions visuals impactants.",
+    "desc2": "Tinc experiència en disseny UX/UI, prototipat digital i desenvolupament frontend, combinant eines com <strong>Figma</strong>, <strong>Vite</strong>, <strong>Vue.js</strong> i <strong>Bootstrap</strong> per a la creació d'interfícies web modernes i funcionals.",
+    "desc3": "A més, el meu perfil es complementa amb modelatge 3D i fabricació digital, utilitzant programari com <strong>Blender</strong>, <strong>Rhinoceros</strong>, <strong>Onshape</strong> i <strong>ZBrush</strong> per desenvolupar productes interactius, prototips físics i experiències immersives.",
+    "contact": "Contacta'm"
+  },
+  "education": {
+    "title": "Formació",
+    "items": [
+      {
+        "degree": "Màster en Tecnologies Interactives i Fabricació Digital",
+        "school": "UPV (set. 2024 - juny 2025)"
+      },
+      {
+        "degree": "Grau en Comunicació Interactiva",
+        "school": "UAB (set. 2020 - juny 2024)"
+      },
+      {
+        "degree": "Grau Superior en Suport Audiovisual",
+        "school": "Institut Mare de Déu de la Mercè (2018 - 2020)"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Habilitats i Tecnologies",
+    "responsive": "Disseny responsiu",
+    "visual": "Jerarquia visual",
+    "accessibility": "Accessibilitat",
+    "skills.print": "Impressió 3D"
+  }
+}

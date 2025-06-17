@@ -1,0 +1,80 @@
+{
+  "header.title": "AMC Portfolio",
+  "header.home": "Inicio",
+  "header.about": "Sobre mí",
+  "header.projects": "Proyectos",
+  "header.contact": "Contacto",
+  "footer.copyright": "2025 Portfolio Asier Martinez Corona. Todos los derechos reservados.",
+  "hero": {
+    "name": "Asier",
+    "surname": "Martínez Corona",
+    "greeting": "Hola",
+    "maker": "maker !",
+    "portal": "portal !",
+    "world": "world !"
+  },
+  "hotspot": {
+    "photography": "Fotografía",
+    "interactive": "Proyectos Interactivos",
+    "web": "Diseño Web",
+    "fabrication": "Fabricación digital"
+  },
+  "experience": {
+    "title": "Experiencia Profesional",
+    "more": "Ver más",
+    "jobs": [
+      {
+        "title": "Ayudante de creación de contenido",
+        "company": "Croqueta de Xocolata · sept. 2022 – mar. 2025",
+        "desc": "Edité vídeos para Instagram, TikTok y YouTube adaptando el formato al público objetivo.<br>Planifiqué estrategias de contenido semanales basadas en tendencias actuales.<br>Supervisé el rendimiento de publicaciones y optimicé el engagement."
+      },
+      {
+        "title": "Gestor de Comunicación Digital y Contenidos",
+        "company": "UAB – Unitat de Dinamització Comunitària · oct. 2023 – jul. 2024",
+        "desc": "Desarrollé y mantuve sitios web en WordPress enfocados en la promoción de eventos.<br>Diseñé materiales gráficos y contenido visual para difusión interna y externa.<br>Coordiné campañas de comunicación en redes sociales y correo electrónico."
+      },
+      {
+        "title": "Asistente en Proyectos de Comunicación",
+        "company": "Instituto de Innovación Social Esade · abr. 2023 – mar. 2024",
+        "desc": "Coordiné eventos y actividades con enfoque participativo y de impacto social.<br>Apoyé el diseño y ejecución de estrategias de comunicación digital en redes."
+      },
+      {
+        "title": "Técnico de Sonido en Eventos en Vivo",
+        "company": "Grup Jaume Muntaner · Sept. 2019 – Mar. 2020",
+        "desc": "Instalé y operé sistemas de sonido para espectáculos en vivo.<br>Grabé, mezclé y edité audio para eventos y producciones audiovisuales.<br>Resolví problemas técnicos en tiempo real, asegurando un sonido profesional y constante."
+      }
+    ]
+  },
+  "education": {
+    "title": "Formación",
+    "items": [
+      {
+        "degree": "Máster en Tecnologías Interactivas y Fabricación Digital",
+        "school": "UPV (sep 2024 - jun 2025)"
+      },
+      {
+        "degree": "Grado en Comunicación Interactiva",
+        "school": "UAB (sep 2020 - jun 2024)"
+      },
+      {
+        "degree": "Grado Superior en Soporte Audiovisual",
+        "school": "Instituto Mare de Déu de la Mercè (2018 - 2020)"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Habilidades & Tecnologías",
+    "responsive": "Diseño responsivo",
+    "visual": "Jerarquía visual",
+    "accessibility": "Accesibilidad",
+    "skills.print": "Impresión 3D"
+
+  },
+  "about": {
+    "title": "Sobre mí",
+    "desc1": "Diseñador web y especialista en modelado 3D con experiencia en fabricación digital y tecnologías interactivas. Mi trabajo se centra en la creación de interfaces intuitivas, experiencias digitales innovadoras y soluciones visuales impactantes.",
+    "desc2": "Cuento con experiencia en diseño UX/UI, prototipado digital y desarrollo frontend, combinando herramientas como <strong>Figma</strong>, <strong>Vite</strong>, <strong>Vue.js</strong> y <strong>Bootstrap</strong> para la creación de interfaces web modernas y funcionales.",
+    "desc3": "Además, mi perfil se complementa con modelado 3D y fabricación digital, utilizando softwares como <strong>Blender</strong>, <strong>Rhinoceros</strong>, <strong>Onshape</strong> y <strong>ZBrush</strong> para desarrollar productos interactivos, prototipos físicos y experiencias inmersivas.",
+    "contact": "Contáctame"
+  }
+}

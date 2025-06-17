@@ -31,11 +31,21 @@
       type="module"
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
     ></script>
+
+    <!-- i18next y plugins para traducción (deben ir antes de cualquier script que use i18next) -->
+    <script src="https://unpkg.com/i18next@23.11.5/dist/umd/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-http-backend@2.2.0/i18nextHttpBackend.min.js"></script>
+    <script src="https://unpkg.com/i18next-browser-languagedetector@7.1.0/i18nextBrowserLanguageDetector.min.js"></script>
   </head>
 
   <body>
     <header>
       <div id="header"></div>
+      <div id="lang-switcher" style="position: absolute; top: 10px; right: 20px; z-index: 1000;">
+        <button class="btn btn-sm btn-light" data-lang="es">ES</button>
+        <button class="btn btn-sm btn-light" data-lang="en">EN</button>
+        <button class="btn btn-sm btn-light" data-lang="ca">CA</button>
+      </div>
     </header>
     <main>
       <div id="particles-js"></div>
@@ -43,21 +53,19 @@
         <!-- Nombre y descripción -->
         <div class="hero">
           <h1 class="underline-thick">
-            Asier <br /><span class="text-outline">Martínez Corona</span>
+            <span data-i18n="hero.name">Asier</span> <br /><span class="text-outline" data-i18n="hero.surname">Martínez Corona</span>
           </h1>
           <div class="underline-rect"></div>
           <div class="content" style="margin-top: 2rem;">
-  <div class="visible" >
-    <p>Hello</p>
-    <ul>
-      <li>maker !</li>
-      <li>portal !</li>
-      <li>world !</li>
-    </ul>
-  </div>
-</div>
-
-          
+            <div class="visible">
+              <p data-i18n="hero.greeting">Hello</p>
+              <ul>
+                <li data-i18n="hero.maker">maker !</li>
+                <li data-i18n="hero.portal">portal !</li>
+                <li data-i18n="hero.world">world !</li>
+              </ul>
+            </div>
+          </div>
         </div>
         
 
@@ -87,11 +95,11 @@
                   </button>  -->
 
               <button class="Hotspot" slot="hotspot-2" data-position="187.16671190438376m -189.79333455305573m -22.627930157638275m" data-normal="-0.3873693771919351m 0.4630690918021439m 0.7971900537710376m" data-visibility-attribute="visible" onclick="window.location.href='ar.html?tema=fotografia'">
-                      <div class="HotspotAnnotation">Fotografía</div>
-                  </button>
+                <div class="HotspotAnnotation" data-i18n="hotspot.photography">Fotografía</div>
+              </button>
 
               <button class="Hotspot" slot="hotspot-4" data-position="37.51989713458498m 168.95150710109647m -5.27067445919684m" data-normal="0.3117896730757719m 0.8321940291025504m 0.4585196808091959m" data-visibility-attribute="visible" onclick="window.location.href='ar.html?tema=interactivos'">
-                <div class="HotspotAnnotation">Proyectos Interactivos</div>
+                <div class="HotspotAnnotation" data-i18n="hotspot.interactive">Proyectos Interactivos</div>
               </button>
 
               <button
@@ -102,7 +110,7 @@
                 data-visibility-attribute="visible"
                 onclick="window.location.href='ar.html?tema=web'"
               >
-                <div class="HotspotAnnotation">Diseño Web</div>
+                <div class="HotspotAnnotation" data-i18n="hotspot.web">Diseño Web</div>
               </button>
 
               <button
@@ -113,7 +121,7 @@
                 data-visibility-attribute="visible"
                 onclick="window.location.href='ar.html?tema=fabricacion'"
               >
-                <div class="HotspotAnnotation">Fabricación digital</div>
+                <div class="HotspotAnnotation" data-i18n="hotspot.fabrication">Fabricación digital</div>
               </button>
 
               <!-- Barra de progreso -->
@@ -126,11 +134,14 @@
       </section>
     </main>
 
+    <div id="threejs-bust" style="width:100vw; height:400px;"></div>
+
     <div id="footer" class="footer-index"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="js/particles-init.js"></script>
-    <script type="module" src="js/bust-three.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.177.0/build/three.min.js"></script>
+    <script src="js/bust-three.js"></script>
     <script>
       particlesJS.load("particles-js", "particlesjs-config.json", function () {
         console.log("✨ Partículas cargadas correctamente");
@@ -143,16 +154,6 @@
         .then((res) => res.text())
         .then((html) => {
           document.getElementById("header").innerHTML = html;
-
-          // Ejecutar el JS del menú hamburguesa DESPUÉS de insertar el header
-          const toggler = document.getElementById("toggleBtn");
-          const menu = document.getElementById("navMenu");
-
-          if (toggler && menu) {
-            toggler.addEventListener("click", () => {
-              menu.classList.toggle("active");
-            });
-          }
         });
 
       // Cargar el footer desde un archivo HTML externo
@@ -162,26 +163,42 @@
           document.getElementById("footer").innerHTML = html;
         });
 
-      document.addEventListener("DOMContentLoaded", () => {
-        const hero = document.getElementById("hero");
-        const header = document.getElementById("header");
+      // Inicialización de i18next
+      i18next
+        .use(i18nextHttpBackend)
+        .use(i18nextBrowserLanguageDetector)
+        .init({
+          fallbackLng: 'es',
+          debug: true,
+          backend: {
+            loadPath: 'locales/{{lng}}/translation.json',
+          },
+        }, function(err, t) {
+          translateAll();
 
-        if (hero && header) {
-          window.addEventListener("scroll", () => {
-            const scrollPosition = window.scrollY;
-
-            if (scrollPosition > header.offsetHeight + 10) {
-              hero.classList.add("fixed");
-              hero.classList.remove("initial");
-            } else {
-              hero.classList.add("initial");
-              hero.classList.remove("fixed");
-            }
+          // Re-traducir header/footer tras cambio de idioma
+          i18next.on('languageChanged', function() {
+            // Esperar un poco para asegurar que el header/footer están en el DOM
+            setTimeout(function() {
+              translateAll();
+            }, 100);
           });
-        } else {
-          console.error("Elementos hero o header no encontrados en el DOM.");
-        }
-      });
+
+          // Cambiar idioma al hacer click en los botones (asegurar que i18next está listo)
+          document.querySelectorAll('#lang-switcher button').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+              const lang = this.getAttribute('data-lang');
+              i18next.changeLanguage(lang);
+            });
+          });
+        });
+
+      // Función para traducir todos los elementos con data-i18n
+      function translateAll() {
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+          el.innerHTML = i18next.t(el.getAttribute('data-i18n'));
+        });
+      }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   </body>

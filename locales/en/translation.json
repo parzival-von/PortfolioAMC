@@ -1,0 +1,79 @@
+{
+  "header.title": "AMC Portfolio",
+  "header.home": "Home",
+  "header.about": "About me",
+  "header.projects": "Projects",
+  "header.contact": "Contact",
+  "footer.copyright": "2025 Portfolio Asier Martinez Corona. All rights reserved.",
+  "hero": {
+    "name": "Asier",
+    "surname": "Martínez Corona",
+    "greeting": "Hello",
+    "maker": "maker !",
+    "portal": "portal !",
+    "world": "world !"
+  },
+  "hotspot": {
+    "photography": "Photography",
+    "interactive": "Interactive Projects",
+    "web": "Web Design",
+    "fabrication": "Digital Fabrication"
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "more": "See more",
+    "jobs": [
+      {
+        "title": "Content Creation Assistant",
+        "company": "Croqueta de Xocolata · Sept. 2022 – Mar. 2025",
+        "desc": "Edited videos for Instagram, TikTok, and YouTube, adapting formats to the target audience.<br>Planned weekly content strategies based on current trends.<br>Monitored post performance and optimized engagement."
+      },
+      {
+        "title": "Digital Communication and Content Manager",
+        "company": "UAB – Community Dynamization Unit · Oct. 2023 – Jul. 2024",
+        "desc": "Developed and maintained WordPress websites focused on event promotion.<br>Designed graphic materials and visual content for internal and external communication.<br>Coordinated communication campaigns on social media and email."
+      },
+      {
+        "title": "Communication Project Assistant",
+        "company": "Esade Institute for Social Innovation · Apr. 2023 – Mar. 2024",
+        "desc": "Coordinated events and activities with a participatory and social impact approach.<br>Supported the design and execution of digital communication strategies on social networks."
+      },
+      {
+        "title": "Live Event Sound Technician",
+        "company": "Grup Jaume Muntaner · Sept. 2019 – Mar. 2020",
+        "desc": "Installed and operated sound systems for live shows.<br>Recorded, mixed, and edited audio for events and audiovisual productions.<br>Solved technical problems in real time, ensuring professional and consistent sound."
+      }
+    ]
+  },
+  "about": {
+    "title": "About me",
+    "desc1": "Web designer and 3D modeling specialist with experience in digital fabrication and interactive technologies. My work focuses on creating intuitive interfaces, innovative digital experiences, and impactful visual solutions.",
+    "desc2": "I have experience in UX/UI design, digital prototyping, and frontend development, combining tools such as <strong>Figma</strong>, <strong>Vite</strong>, <strong>Vue.js</strong>, and <strong>Bootstrap</strong> to create modern and functional web interfaces.",
+    "desc3": "In addition, my profile is complemented by 3D modeling and digital fabrication, using software such as <strong>Blender</strong>, <strong>Rhinoceros</strong>, <strong>Onshape</strong>, and <strong>ZBrush</strong> to develop interactive products, physical prototypes, and immersive experiences.",
+    "contact": "Contact me"
+  },
+  "education": {
+    "title": "Education",
+    "items": [
+      {
+        "degree": "Master in Interactive Technologies and Digital Fabrication",
+        "school": "UPV (Sep 2024 - Jun 2025)"
+      },
+      {
+        "degree": "Bachelor's Degree in Interactive Communication",
+        "school": "UAB (Sep 2020 - Jun 2024)"
+      },
+      {
+        "degree": "Higher Degree in Audiovisual Support",
+        "school": "Instituto Mare de Déu de la Mercè (2018 - 2020)"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "responsive": "Responsive design",
+    "visual": "Visual hierarchy",
+    "accessibility": "Accessibility",
+    "skills.print": "3D Printing"
+  }
+}

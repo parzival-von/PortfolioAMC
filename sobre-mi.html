@@ -30,10 +30,21 @@
   <link rel="stylesheet" href="css/components/timeline.css">
 
 
+  <!-- i18next y plugins para traducción -->
+<script src="https://unpkg.com/i18next@23.11.5/dist/umd/i18next.min.js"></script>
+<script src="https://unpkg.com/i18next-http-backend@2.2.0/i18nextHttpBackend.min.js"></script>
+<script src="https://unpkg.com/i18next-browser-languagedetector@7.1.0/i18nextBrowserLanguageDetector.min.js"></script>
+
+
 </head>
 <body>
     <div id="particles-js"></div>
-      <div id="header"></div>    
+      <div id="header"></div>
+      <div id="lang-switcher" style="position: absolute; top: 10px; right: 20px; z-index: 1000;">
+  <button class="btn btn-sm btn-light" data-lang="es">ES</button>
+  <button class="btn btn-sm btn-light" data-lang="en">EN</button>
+  <button class="btn btn-sm btn-light" data-lang="ca">CA</button>
+</div>    
   <main>
     <!-- Sección Sobre mí -->
     <section id="about-me" class="py-5">
@@ -50,12 +61,12 @@
           </div>
           <!-- Texto "Sobre mí" después -->
           <div class="col-12 col-md-7 padingmov" data-aos="fade-left">
-            <h2 class="fw-bold mb-3">Sobre mí</h2>
-            <p>Diseñador web y especialista en modelado 3D con experiencia en fabricación digital y tecnologías interactivas. Mi trabajo se centra en la creación de interfaces intuitivas, experiencias digitales innovadoras y soluciones visuales impactantes.</p>
-            <p>Cuento con experiencia en diseño UX/UI, prototipado digital y desarrollo frontend, combinando herramientas como <strong>Figma</strong>, <strong>Vite</strong>, <strong>Vue.js</strong> y <strong>Bootstrap</strong> para la creación de interfaces web modernas y funcionales.</p>
-            <p>Además, mi perfil se complementa con modelado 3D y fabricación digital, utilizando softwares como <strong>Blender</strong>, <strong>Rhinoceros</strong>, <strong>Onshape</strong> y <strong>ZBrush</strong> para desarrollar productos interactivos, prototipos físicos y experiencias inmersivas.</p>
+            <h2 class="fw-bold mb-3" data-i18n="about.title">Sobre mí</h2>
+            <p data-i18n="about.desc1">Diseñador web y especialista en modelado 3D con experiencia en fabricación digital y tecnologías interactivas. Mi trabajo se centra en la creación de interfaces intuitivas, experiencias digitales innovadoras y soluciones visuales impactantes.</p>
+            <p data-i18n="about.desc2">Cuento con experiencia en diseño UX/UI, prototipado digital y desarrollo frontend, combinando herramientas como <strong>Figma</strong>, <strong>Vite</strong>, <strong>Vue.js</strong> y <strong>Bootstrap</strong> para la creación de interfaces web modernas y funcionales.</p>
+            <p data-i18n="about.desc3">Además, mi perfil se complementa con modelado 3D y fabricación digital, utilizando softwares como <strong>Blender</strong>, <strong>Rhinoceros</strong>, <strong>Onshape</strong> y <strong>ZBrush</strong> para desarrollar productos interactivos, prototipos físicos y experiencias inmersivas.</p>
             <div class="d-flex justify-content-center align-items-center gap-3 mt-3">
-              <a href="mailto:mc.asieer@gmail.com" class="badge-tech"><i class="fas fa-envelope"></i> Contáctame</a>
+              <a href="mailto:mc.asieer@gmail.com" class="badge-tech"><i class="fas fa-envelope"></i> <span data-i18n="about.contact">Contáctame</span></a>
               <a href="https://www.linkedin.com/in/asiermartinezc/" target="_blank" class="badge-tech" rel="noopener">
                 <i class="fab fa-linkedin"></i> LinkedIn
               </a>
@@ -70,71 +81,82 @@
 
     <!-- Education Timeline -->
     <section id="education" data-aos="fade-up">
-        <div class="container">
-          <h2 class="section-title">Formación</h2>
-          <div class="timeline">
-            <div class="timeline-item" data-aos="fade-right">
-              <h5>Máster en Tecnologías Interactivas y Fabricación Digital</h5>
-              <p class="text-muted">UPV (sep 2024 - jun 2025)</p>
-            </div>
-            <div class="timeline-item" data-aos="fade-left">
-              <h5>Grado en Comunicación Interactiva</h5>
-              <p class="text-muted">UAB (sep 2020 - jun 2024)</p>
-            </div>
-            <div class="timeline-item" data-aos="fade-right">
-              <h5>Grado Superior en Soporte Audiovisual</h5>
-              <p class="text-muted">Instituto Mare de Déu de la Mercè (2018 - 2020)</p>
-            </div>
-          </div>
-        </div>
-      </section>
+  <div class="container">
+    <h2 class="section-title" data-i18n="education.title">Formación</h2>
+    <div id="education-list" class="timeline"></div>
+  </div>
+</section>
+<script>
+// Renderizado dinámico de educación con i18next
+function renderEducation() {
+  const items = i18next.t('education.items', { returnObjects: true });
+  const container = document.getElementById('education-list');
+  if (!Array.isArray(items) || !container) return;
+  container.innerHTML = '';
+  items.forEach((item, idx) => {
+    container.innerHTML += `<div class="timeline-item" data-aos="fade-${idx % 2 === 0 ? 'right' : 'left'}">
+      <h5>${item.degree}</h5>
+      <p class="text-muted">${item.school}</p>
+    </div>`;
+  });
+}
+if (window.i18next) {
+  i18next.on('initialized', renderEducation);
+  i18next.on('languageChanged', renderEducation);
+  if (i18next.isInitialized) renderEducation();
+} else {
+  document.addEventListener('DOMContentLoaded', renderEducation);
+}
+</script>
       <!-- Sección Experiencia Profesional -->
     <section id="experience" class="py-5">
         <div class="container">
-          <h2 class="fw-bold mb-4" data-aos="fade-up">Experiencia Profesional</h2>
-          <div class="row g-4">
-            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="50">
-              <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                  <h5 class="card-title">Ayudante de creación de contenido</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Croqueta de Xocolata · sept. 2022 – mar. 2025</h6>
-                  <p class="card-text small">Edición de vídeo y planificación de contenido para Instagram, TikTok y YouTube.<br>Supervisión de tendencias y optimización de engagement.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="100">
-              <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                  <h5 class="card-title">Prácticas de Comunicación</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">UAB – Unitat de Dinamització Comunitària · oct. 2023 – jul. 2024</h6>
-                  <p class="card-text small">Gestión de redes y marketing digital.<br>Creación de contenido visual y estrategias de comunicación.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <h2 class="fw-bold mb-4" data-i18n="experience.title">Experiencia Profesional</h2>
+          <div id="experience-list" class="row g-4"></div>
           <div class="collapse mt-4" id="moreExp">
-            <div class="row g-4">
-              <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="150">
-                <div class="card h-100 shadow-sm">
-                  <div class="card-body">
-                    <h5 class="card-title">Estudiante en prácticas</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Instituto de Innovación Social Esade · abr. 2023 – mar. 2024</h6>
-                    <p class="card-text small">Coordinación de eventos y actividades para fomentar la participación.<br> Desarrollo de estrategias de marketing en redes sociales.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div id="experience-list-more" class="row g-4"></div>
           </div>
           <div class="text-center">
-            <a class="btn btn-outline-primary mt-4" data-bs-toggle="collapse" href="#moreExp" role="button" aria-expanded="false" aria-controls="moreExp">Ver más</a>
+            <a class="btn btn-outline-primary mt-4" data-bs-toggle="collapse" href="#moreExp" role="button" aria-expanded="false" aria-controls="moreExp" data-i18n="experience.more">Ver más</a>
           </div>
+          <script>
+          // Renderizado dinámico de experiencia profesional con i18next
+          function renderExperience() {
+            const jobs = i18next.t('experience.jobs', { returnObjects: true });
+            const main = document.getElementById('experience-list');
+            const more = document.getElementById('experience-list-more');
+            if (!Array.isArray(jobs)) return;
+            main.innerHTML = '';
+            more.innerHTML = '';
+            jobs.forEach((job, idx) => {
+              const html = `<div class='col-12 col-md-6' data-aos='fade-up' data-aos-delay='${50 + idx * 50}'>
+                <div class='card h-100 shadow-sm'>
+                  <div class='card-body'>
+                    <h5 class='card-title'>${job.title}</h5>
+                    <h6 class='card-subtitle mb-2 text-muted'>${job.company}</h6>
+                    <p class='card-text small'>${job.desc}</p>
+                  </div>
+                </div>
+              </div>`;
+              if (idx < 2) main.innerHTML += html;
+              else more.innerHTML += html;
+            });
+          }
+          if (window.i18next) {
+            i18next.on('initialized', renderExperience);
+            i18next.on('languageChanged', renderExperience);
+            if (i18next.isInitialized) renderExperience();
+          } else {
+            document.addEventListener('DOMContentLoaded', renderExperience);
+          }
+          </script>
         </div>
       </section>
 
     <!-- Skills -->
     <section id="skills" data-aos="fade-up">
   <div class="container">
-    <h2 class="section-title">Habilidades & Tecnologías</h2>
+    <h2 class="section-title" data-i18n="skills.title">Habilidades & Tecnologías</h2>
     <div class="skill-list d-flex flex-wrap gap-2">
       <span class="badge-tech badge-tech-static"><i class="fab fa-html5"></i> HTML5</span>
       <span class="badge-tech badge-tech-static"><i class="fab fa-css3-alt"></i> CSS3</span>
@@ -155,10 +177,10 @@
       <span class="badge-tech badge-tech-static"><i class="fas fa-microchip"></i> Arduino</span>
       <span class="badge-tech badge-tech-static"><i class="fab fa-figma"></i> Figma</span>
       <span class="badge-tech badge-tech-static"><i class="fas fa-pencil-ruler"></i> Sketch</span>
-      <span class="badge-tech badge-tech-static"><i class="fas fa-mobile-alt"></i> Diseño responsivo</span>
-      <span class="badge-tech badge-tech-static"><i class="fas fa-eye"></i> Jerarquía visual</span>
-      <span class="badge-tech badge-tech-static"><i class="fas fa-universal-access"></i> Accesibilidad</span>
-      <span class="badge-tech badge-tech-static"><i class="fab fa-blender-phone"></i> Blender</span>
+      <span class="badge-tech badge-tech-static"><i class="fas fa-mobile-alt"></i> <span data-i18n="skills.responsive">Diseño responsivo</span></span>
+      <span class="badge-tech badge-tech-static"><i class="fas fa-eye"></i> <span data-i18n="skills.visual">Jerarquía visual</span></span>
+      <span class="badge-tech badge-tech-static"><i class="fas fa-universal-access"></i> <span data-i18n="skills.accessibility">Accesibilidad</span></span>
+      <span class="badge-tech badge-tech-static"><span class="iconify" data-icon="simple-icons:blender"></span> Blender</span>
       <span class="badge-tech badge-tech-static"><span class="iconify" data-icon="simple-icons:autodesk" data-inline="false"></span> Maya</span>
       <span class="badge-tech badge-tech-static"><i class="fas fa-sculpture"></i> ZBrush</span>
       <span class="badge-tech badge-tech-static"><span class="iconify" data-icon="mdi:rhino" data-inline="false"></span> Rhinoceros</span>
@@ -166,7 +188,7 @@
       <span class="badge-tech badge-tech-static"><span class="iconify" data-icon="simple-icons:autodesk" data-inline="false"></span> Fusion 360</span>
       <span class="badge-tech badge-tech-static"><i class="fas fa-cube"></i> Onshape</span>
       <span class="badge-tech badge-tech-static"><span class="iconify" data-icon="simple-icons:autodesk" data-inline="false"></span> AutoCAD</span>
-      <span class="badge-tech badge-tech-static"><i class="fas fa-print"></i> Impresión 3D</span>
+      <span class="badge-tech badge-tech-static"><i class="fas fa-print"></i> <span data-i18n="skills.print">Impresión 3D</span></span>
       
     </div>
   </div>
@@ -253,6 +275,50 @@
 <!-- Contenedor para el busto 3D de Three.js -->
 <div id="threejs-bust" style="width:100%;height:400px;"></div>
 
+
+<script>
+// Inicialización de i18next (si no está ya inicializado por otro script)
+if (!window.i18nextInitialized) {
+  i18next
+    .use(i18nextHttpBackend)
+    .use(i18nextBrowserLanguageDetector)
+    .init({
+      fallbackLng: 'es',
+      debug: false,
+      backend: {
+        loadPath: 'locales/{{lng}}/translation.json',
+      },
+    }, function(err, t) {
+      translateAll();
+      renderExperience && renderExperience();
+      i18next.on('languageChanged', function() {
+        setTimeout(function() {
+          translateAll();
+          renderExperience && renderExperience();
+        }, 100);
+      });
+      document.querySelectorAll('#lang-switcher button').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          const lang = this.getAttribute('data-lang');
+          i18next.changeLanguage(lang);
+        });
+      });
+    });
+  window.i18nextInitialized = true;
+} else {
+  document.querySelectorAll('#lang-switcher button').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const lang = this.getAttribute('data-lang');
+      i18next.changeLanguage(lang);
+    });
+  });
+}
+function translateAll() {
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    el.innerHTML = i18next.t(el.getAttribute('data-i18n'));
+  });
+}
+</script>
 
 </body>
 </html>
