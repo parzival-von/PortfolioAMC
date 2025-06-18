@@ -22,20 +22,7 @@ function initThreeJS() {
     return;
   }
 
-  scene = new THREE.Scene();
-  camera = new THREE.PerspectiveCamera(35, container.clientWidth / container.clientHeight, 0.1, 100);
-  camera.position.set(0, 1.5, 3);
-
-  renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-  renderer.setSize(container.clientWidth, container.clientHeight);
-  renderer.setPixelRatio(window.devicePixelRatio);
-  container.appendChild(renderer.domElement);
-
-  const ambient = new THREE.HemisphereLight(0xffffff, 0x444444, 1.2);
-  scene.add(ambient);
-  const dir = new THREE.DirectionalLight(0xffffff, 0.8);
-  dir.position.set(5, 10, 7);
-  scene.add(dir);
+  
 
   // Cargar GLTFLoader y luego el modelo
   loadGLTFLoader(function() {
@@ -52,7 +39,23 @@ function initThreeJS() {
       function(xhr) { console.log(`Progreso: ${(xhr.loaded/xhr.total*100).toFixed(1)}%`); },
       function(err) { console.error('Error cargando GLTF:', err); }
     );
+    scene = new THREE.Scene();
+  camera = new THREE.PerspectiveCamera(35, container.clientWidth / container.clientHeight, 0.1, 100);
+  camera.position.set(0, 1.5, 3);
+
+  renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  container.appendChild(renderer.domElement);
+
+  const ambient = new THREE.HemisphereLight(0xffffff, 0x444444, 1.2);
+  scene.add(ambient);
+  const dir = new THREE.DirectionalLight(0xffffff, 0.8);
+  dir.position.set(5, 10, 7);
+  scene.add(dir);
   });
+
+  
 
   window.addEventListener('resize', onResize);
 }

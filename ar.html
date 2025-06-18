@@ -34,15 +34,14 @@
     <main>
       <section id="proyectos">
         <div>
-        <h2>Mis Proyectos</h2>
-        <div class="d-flex justify-content-center">
+          <h2 data-i18n="ar.projectsTitle">Mis Proyectos</h2>
+          <div class="d-flex justify-content-center">
             <ul class="hotspot-menu">
-    <li><button class="Hotspot" data-tema="interactivos">Proyectos Interactivos</button></li>
-    <li><button class="Hotspot" data-tema="web">Diseño Web</button></li>
-    <li><button class="Hotspot" data-tema="fabricacion">Fabricación Digital</button></li>
-    <li><button class="Hotspot" data-tema="fotografia">Fotografía</button></li>
-</ul>
-
+              <li><button class="Hotspot" data-tema="interactivos" data-i18n="ar.interactive">Proyectos Interactivos</button></li>
+              <li><button class="Hotspot" data-tema="web" data-i18n="ar.web">Diseño Web</button></li>
+              <li><button class="Hotspot" data-tema="fabricacion" data-i18n="ar.fabrication">Fabricación Digital</button></li>
+              <li><button class="Hotspot" data-tema="fotografia" data-i18n="ar.photography">Fotografía</button></li>
+            </ul>
           </div>
         </div>
         <div class="container-proyectos" id="lista-proyectos"></div>
@@ -52,6 +51,11 @@
     </main>
     <div id="footer" class="footer-index"></div>
 
+    <div id="lang-switcher" style="position: absolute; top: 10px; right: 20px; z-index: 1000;">
+      <button class="btn btn-sm btn-light" data-lang="es">ES</button>
+      <button class="btn btn-sm btn-light" data-lang="en">EN</button>
+      <button class="btn btn-sm btn-light" data-lang="ca">CA</button>
+    </div>
     
     <script>
       // Detecta la ruta relativa correcta para el header
@@ -68,10 +72,33 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-    <script src="js/particles-init.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var particlesDiv = document.getElementById("particles-js");
+        if (!particlesDiv) {
+          console.error("[Particles] El elemento #particles-js no existe en el DOM.");
+        } else {
+          particlesJS.load("particles-js", "particlesjs-config.json", function() {
+            console.log("✨ Particles cargados correctamente");
+          });
+          // Comprobación adicional de carga del archivo de configuración
+          fetch("particlesjs-config.json")
+            .then(function(res) {
+              if (!res.ok) throw new Error("No se pudo cargar particlesjs-config.json");
+              return res.json();
+            })
+            .then(function(cfg) {
+              console.log("[Particles] Configuración cargada:", cfg);
+            })
+            .catch(function(err) {
+              console.error("[Particles] Error al cargar configuración:", err);
+            });
+        }
+      });
+    </script>
     <script type="module" src="js/bust-three.js"></script>
-    <script src="js/proyectos.js"></script>
-  <script src="js/proyecto-loader.js"></script>
+    <!-- <script src="js/proyectos.js"></script>
+    <script src="js/proyecto-loader.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
     <!-- Particles.js -->
@@ -82,34 +109,6 @@
       );
     </script>
     <script>
-      // Cargar el header desde un archivo HTML externo
-      fetch("./components/header.html")
-        .then((res) => {
-          if (!res.ok) {
-            throw new Error(`Error al cargar el header: ${res.status}`);
-          }
-          return res.text();
-        })
-        .then((html) => {
-          const headerElement = document.getElementById("header");
-          if (headerElement) {
-            headerElement.innerHTML = html;
-
-            // Ejecutar el JS del menú hamburguesa DESPUÉS de insertar el header
-            const toggler = document.getElementById("toggleBtn");
-            const menu = document.getElementById("navMenu");
-
-            if (toggler && menu) {
-              toggler.addEventListener("click", () => {
-                menu.classList.toggle("active");
-              });
-            }
-          } else {
-            console.error("Elemento header no encontrado en el DOM.");
-          }
-        })
-        .catch((err) => console.error(err));
-
       document.addEventListener("DOMContentLoaded", () => {
         const header = document.getElementById("header");
 
@@ -143,6 +142,93 @@
 
         console.log("DOM completamente cargado y listo para ejecutar scripts.");
       });
+    </script>
+
+    <!-- i18next y plugins para traducción -->
+    <script src="https://unpkg.com/i18next@23.11.5/dist/umd/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-http-backend@2.2.0/i18nextHttpBackend.min.js"></script>
+    <script src="https://unpkg.com/i18next-browser-languagedetector@7.1.0/i18nextBrowserLanguageDetector.min.js"></script>
+    <script>
+      // Inicialización de i18next para traducción
+      function updateLangSwitcherActive() {
+        var current = i18next.language || i18next.resolvedLanguage || 'es';
+        document.querySelectorAll('#lang-switcher button').forEach(function(btn) {
+          if (btn.getAttribute('data-lang') === current) {
+            btn.classList.add('active');
+            btn.classList.remove('btn-light');
+            btn.classList.add('btn-primary');
+          } else {
+            btn.classList.remove('active');
+            btn.classList.remove('btn-primary');
+            btn.classList.add('btn-light');
+          }
+        });
+      }
+
+      if (!window.i18nextInitialized) {
+        i18next
+          .use(i18nextHttpBackend)
+          .use(i18nextBrowserLanguageDetector)
+          .init({
+            fallbackLng: 'es',
+            debug: false,
+            backend: {
+              loadPath: 'locales/{{lng}}/translation.json',
+            },
+            load: 'languageOnly', // <-- Añadido para evitar 404 con es-ES
+          }, function(err, t) {
+            translateAll();
+            updateLangSwitcherActive();
+            i18next.on('languageChanged', function() {
+              setTimeout(function() {
+                translateAll();
+                updateLangSwitcherActive();
+              }, 100);
+            });
+            document.querySelectorAll('#lang-switcher button').forEach(function(btn) {
+              btn.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                i18next.changeLanguage(lang);
+              });
+            });
+            // Carga los scripts de proyectos SOLO cuando i18next ya está listo
+            var s1 = document.createElement('script');
+            s1.src = 'js/proyectos.js';
+            s1.onload = function() {
+              var s2 = document.createElement('script');
+              s2.src = 'js/proyecto-loader.js';
+              s2.onload = function() {
+                // Log para depuración de carga de scripts
+                console.log('[DEBUG] Ambos scripts de proyectos cargados');
+              };
+              document.body.appendChild(s2);
+            };
+            document.body.appendChild(s1);
+          });
+        window.i18nextInitialized = true;
+      } else {
+        document.querySelectorAll('#lang-switcher button').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            i18next.changeLanguage(lang);
+          });
+        });
+        updateLangSwitcherActive();
+        // Carga los scripts si i18next ya está inicializado
+        var s1 = document.createElement('script');
+        s1.src = 'js/proyectos.js';
+        s1.onload = function() {
+          var s2 = document.createElement('script');
+          s2.src = 'js/proyecto-loader.js';
+          document.body.appendChild(s2);
+        };
+        document.body.appendChild(s1);
+      }
+      function translateAll() {
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+          el.innerHTML = i18next.t(el.getAttribute('data-i18n'));
+        });
+      }
     </script>
   </body>
   

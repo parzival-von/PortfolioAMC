@@ -75,5 +75,50 @@
     "visual": "Jerarquia visual",
     "accessibility": "Accessibilitat",
     "skills.print": "Impressió 3D"
+  },
+  "ar": {
+    "projectsTitle": "Els meus projectes",
+    "interactive": "Projectes Interactius",
+    "web": "Disseny Web",
+    "fabrication": "Fabricació Digital",
+    "photography": "Fotografia"
+  },
+  "projects": {
+    "castellEmotion": {
+      "title": "CastellEmotion",
+      "desc": "CastellEmotion és una experiència immersiva de realitat virtual que transforma la tradició catalana dels castells en una eina educativa i terapèutica. El projecte combina cultura popular, disseny interactiu i benestar emocional per oferir un entorn segur on els usuaris poden entrenar habilitats tant físiques com mentals."
+    },
+    "orbitails": {
+      "title": "OrbiTails",
+      "desc": "OrbiTails és un videojoc que vam crear com a part del nostre treball final en Integració d'Objectes Digitals. La història gira al voltant de tres astronautes animals—un porc, un gat i un conill—que s'estavellen en un planeta desconegut. Cadascun ha de recollir materials per construir la seva base abans que els altres, mentre esquiven meteorits i eviten un alienígena que intenta entorpir el seu progrés."
+    },
+    "ajedrezDune": {
+      "title": "Escacs Dune",
+      "desc": "Aquest projecte, desenvolupat com a part de l'assignatura de Modelatge 3D al Màster en Tecnologies Interactives i Fabricació Digital, va consistir en la creació d'un tauler d'escacs i les seves peces, integrats en un entorn arquitectònic."
+    },
+    "fotografs": {
+      "title": "Unió de Fotògrafs Castellers",
+      "desc": "Unió de Fotògrafs Castellers és un projecte col·laboratiu que dona visibilitat a la feina de fotògrafs i fotògrafes que documenten la tradició castellera. El web centralitza enllaços a galeries fotogràfiques i presenta perfils personals de cada participant."
+    },
+    "galactic": {
+      "title": "Galactic Assault I.A.",
+      "desc": "Videojoc 2D de naus espacials desenvolupat com a projecte acadèmic amb suport d'eines d'intel·ligència artificial. El jugador ha de recollir monedes, evitar col·lisions amb naus enemigues i utilitzar trets per defensar-se, tot mentre manté la seva base protegida. El disseny visual, musical i lògic va ser generat amb plataformes d'IA com DALL·E, AIVA i ChatGPT, aconseguint una experiència interactiva única."
+    },
+    "notion": {
+      "title": "Notion App – Gestor de Tasques",
+      "desc": "Aplicació web inspirada en Notion per gestionar tasques dins de projectes. Permet als usuaris crear, visualitzar i administrar llistes de tasques associades a diferents projectes. Compta amb una interfície amigable, camps interactius i un sistema dinàmic per afegir noves tasques. És ideal per organitzar treballs, idees o fluxos de treball en equips petits."
+    },
+    "lampara": {
+      "title": "Làmpada Modular",
+      "desc": "Aquesta làmpada modular està dissenyada i fabricada amb tecnologia d'impressió 3D, oferint una estètica única i personalitzable. Composta per múltiples peces intercanviables—base, bombeta, caputxa, volandera, casquet i pantalla—, permet una fàcil substitució o combinació de components. Fabricada en materials resistents i lleugers, és perfecta per a ambients interiors moderns, estudis, escriptoris o com a peça decorativa principal."
+    },
+    "mitoia": {
+      "title": "El Mite de la I.A.",
+      "desc": "Prototip interactiu desenvolupat per a la Setmana del Disseny de València. Aquesta instal·lació artística convida a reflexionar sobre l'impacte ambiental ocult de la intel·ligència artificial, inspirada en el mite de la caverna de Plató. La peça central està fabricada amb impressió 3D en fang ceràmic i bioplàstic d'algues, integrant sensors tàctils connectats a Arduino. En interactuar, s'activen projeccions generades amb p5.js que mostren dades sobre el consum de materials, aigua, energia i residus associats a la IA. L'obra combina art, tecnologia i consciència ecològica."
+    },
+    "instagram": {
+      "title": "Instagram Feed",
+      "desc": "Mira les meves últimes fotos a Instagram (@ottermarc):"
+    }
   }
 }

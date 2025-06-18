@@ -76,5 +76,50 @@
     "desc2": "Cuento con experiencia en diseño UX/UI, prototipado digital y desarrollo frontend, combinando herramientas como <strong>Figma</strong>, <strong>Vite</strong>, <strong>Vue.js</strong> y <strong>Bootstrap</strong> para la creación de interfaces web modernas y funcionales.",
     "desc3": "Además, mi perfil se complementa con modelado 3D y fabricación digital, utilizando softwares como <strong>Blender</strong>, <strong>Rhinoceros</strong>, <strong>Onshape</strong> y <strong>ZBrush</strong> para desarrollar productos interactivos, prototipos físicos y experiencias inmersivas.",
     "contact": "Contáctame"
+  },
+  "ar": {
+    "projectsTitle": "Mis Proyectos",
+    "interactive": "Proyectos Interactivos",
+    "web": "Diseño Web",
+    "fabrication": "Fabricación Digital",
+    "photography": "Fotografía"
+  },
+  "projects": {
+    "castellEmotion": {
+      "title": "CastellEmotion",
+      "desc": "CastellEmotion es una experiencia inmersiva de realidad virtual que transforma la tradición catalana dels castells en una herramienta educativa y terapéutica. El proyecto combina cultura popular, diseño interactivo y bienestar emocional para ofrecer un entorno seguro donde los usuarios pueden entrenar habilidades tanto físicas como mentales."
+    },
+    "orbitails": {
+      "title": "OrbiTails",
+      "desc": "OrbiTails es un videojuego que creamos como parte de nuestro trabajo final en Integración de Objetos Digitales. La historia gira en torno a tres astronautas animales - un cerdo, un gato y un conejo - que se estrellan en un planeta desconocido. Cada uno debe recolectar materiales para construir su base antes que los otros, mientras esquivan meteoritos y evitan a un alienígena que intenta entorpecer su progreso."
+    },
+    "ajedrezDune": {
+      "title": "Ajedrez Dune",
+      "desc": "Este proyecto, desarrollado como parte de la asignatura de Modelado 3D en el Máster en Tecnologías Interactivas y Fabricación Digital, consistió en la creación de un tablero de ajedrez y sus piezas, integrados en un entorno arquitectónico."
+    },
+    "fotografs": {
+      "title": "Unió de Fotògrafs Castellers",
+      "desc": "Unió de Fotògrafs Castellers es un proyecto colaborativo que da visibilidad al trabajo de fotógrafas y fotógrafos que documentan la tradición castellera. La web centraliza enlaces a galerías fotográficas y presenta perfiles personales de cada participante."
+    },
+    "galactic": {
+      "title": "Galactic Assault I.A.",
+      "desc": "Videojuego 2D de naves espaciales desarrollado como proyecto académico con apoyo de herramientas de inteligencia artificial. El jugador debe recolectar monedas, evitar colisiones con naves enemigas y usar disparos para defenderse, todo mientras mantiene su base protegida. El diseño visual, musical y lógico fue generado con plataformas de IA como DALL·E, AIVA y ChatGPT, logrando una experiencia interactiva única."
+    },
+    "notion": {
+      "title": "Notion App – Gestor de Tareas",
+      "desc": "Aplicación web inspirada en Notion para gestionar tareas dentro de proyectos. Permite a los usuarios crear, visualizar y administrar listas de tareas asociadas a diferentes proyectos. Cuenta con una interfaz amigable, campos interactivos y un sistema dinámico para añadir nuevas tareas. Es ideal para organizar trabajos, ideas o flujos de trabajo en equipos pequeños."
+    },
+    "lampara": {
+      "title": "Lámpara Modular",
+      "desc": "Esta lámpara modular está diseñada y fabricada con tecnología de impresión 3D, ofreciendo una estética única y personalizable. Compuesta por múltiples piezas intercambiables —base, bombilla, caperuza, arandela, casquillo y pantalla—, permite una fácil sustitución o combinación de componentes. Fabricada en materiales resistentes y ligeros, es perfecta para ambientes interiores modernos, estudios, escritorios o como pieza decorativa principal."
+    },
+    "mitoia": {
+      "title": "El Mito de la I.A.",
+      "desc": "Prototipo interactivo desarrollado para la Semana del Diseño de Valencia. Esta instalación artística invita a reflexionar sobre el impacto ambiental oculto de la inteligencia artificial, inspirada en el mito de la caverna de Platón. La pieza central está fabricada con impresión 3D en barro cerámico y bioplástico de algas, integrando sensores táctiles conectados a Arduino. Al interactuar, se activan proyecciones generadas con p5.js que muestran datos sobre el consumo de materiales, agua, energía y residuos asociados a la IA. La obra combina arte, tecnología y conciencia ecológica."
+    },
+    "instagram": {
+      "title": "Instagram Feed",
+      "desc": "Mira mis últimas fotos en Instagram (@ottermarc):"
+    }
   }
 }

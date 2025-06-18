@@ -75,5 +75,50 @@
     "visual": "Visual hierarchy",
     "accessibility": "Accessibility",
     "skills.print": "3D Printing"
+  },
+  "ar": {
+    "projectsTitle": "My Projects",
+    "interactive": "Interactive Projects",
+    "web": "Web Design",
+    "fabrication": "Digital Fabrication",
+    "photography": "Photography"
+  },
+  "projects": {
+    "castellEmotion": {
+      "title": "CastellEmotion",
+      "desc": "CastellEmotion is an immersive virtual reality experience that transforms the Catalan tradition of castells into an educational and therapeutic tool. The project combines popular culture, interactive design, and emotional well-being to offer a safe environment where users can train both physical and mental skills."
+    },
+    "orbitails": {
+      "title": "OrbiTails",
+      "desc": "OrbiTails is a video game we created as part of our final project in Digital Object Integration. The story revolves around three animal astronauts—a pig, a cat, and a rabbit—who crash on an unknown planet. Each must collect materials to build their base before the others, while dodging meteors and avoiding an alien trying to hinder their progress."
+    },
+    "ajedrezDune": {
+      "title": "Dune Chess",
+      "desc": "This project, developed as part of the 3D Modeling course in the Master's in Interactive Technologies and Digital Fabrication, consisted of creating a chessboard and its pieces, integrated into an architectural environment."
+    },
+    "fotografs": {
+      "title": "Unió de Fotògrafs Castellers",
+      "desc": "Unió de Fotògrafs Castellers is a collaborative project that gives visibility to the work of photographers documenting the casteller tradition. The website centralizes links to photo galleries and presents personal profiles of each participant."
+    },
+    "galactic": {
+      "title": "Galactic Assault A.I.",
+      "desc": "2D spaceship video game developed as an academic project with the support of artificial intelligence tools. The player must collect coins, avoid collisions with enemy ships, and use shots to defend themselves, all while keeping their base protected. The visual, musical, and logical design was generated with AI platforms such as DALL·E, AIVA, and ChatGPT, achieving a unique interactive experience."
+    },
+    "notion": {
+      "title": "Notion App – Task Manager",
+      "desc": "Web application inspired by Notion to manage tasks within projects. It allows users to create, view, and manage task lists associated with different projects. It features a user-friendly interface, interactive fields, and a dynamic system for adding new tasks. It is ideal for organizing work, ideas, or workflows in small teams."
+    },
+    "lampara": {
+      "title": "Modular Lamp",
+      "desc": "This modular lamp is designed and manufactured with 3D printing technology, offering a unique and customizable aesthetic. Composed of multiple interchangeable parts—base, bulb, cap, washer, socket, and shade—it allows easy replacement or combination of components. Made of strong and lightweight materials, it is perfect for modern indoor environments, studios, desks, or as a main decorative piece."
+    },
+    "mitoia": {
+      "title": "The Myth of A.I.",
+      "desc": "Interactive prototype developed for Valencia Design Week. This artistic installation invites reflection on the hidden environmental impact of artificial intelligence, inspired by Plato's allegory of the cave. The central piece is made with 3D-printed ceramic clay and algae bioplastic, integrating touch sensors connected to Arduino. When interacting, projections generated with p5.js are activated, showing data on the consumption of materials, water, energy, and waste associated with AI. The work combines art, technology, and ecological awareness."
+    },
+    "instagram": {
+      "title": "Instagram Feed",
+      "desc": "See my latest photos on Instagram (@ottermarc):"
+    }
   }
 }
