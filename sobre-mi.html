@@ -40,11 +40,6 @@
 <body>
     <div id="particles-js"></div>
       <div id="header"></div>
-      <div id="lang-switcher" style="position: absolute; top: 10px; right: 20px; z-index: 1000;">
-  <button class="btn btn-sm btn-light" data-lang="es">ES</button>
-  <button class="btn btn-sm btn-light" data-lang="en">EN</button>
-  <button class="btn btn-sm btn-light" data-lang="ca">CA</button>
-</div>    
   <main>
     <!-- Sección Sobre mí -->
     <section id="about-me" class="py-5">
@@ -277,47 +272,51 @@ if (window.i18next) {
 
 
 <script>
-// Inicialización de i18next (si no está ya inicializado por otro script)
-if (!window.i18nextInitialized) {
-  i18next
-    .use(i18nextHttpBackend)
-    .use(i18nextBrowserLanguageDetector)
-    .init({
-      fallbackLng: 'es',
-      debug: false,
-      backend: {
-        loadPath: 'locales/{{lng}}/translation.json',
-      },
-    }, function(err, t) {
-      translateAll();
-      renderExperience && renderExperience();
-      i18next.on('languageChanged', function() {
-        setTimeout(function() {
-          translateAll();
-          renderExperience && renderExperience();
-        }, 100);
+// Inicialización robusta de i18next tras DOMContentLoaded y scripts cargados
+window.addEventListener('DOMContentLoaded', function() {
+  if (!window.i18nextInitialized) {
+    i18next
+      .use(i18nextHttpBackend)
+      .use(i18nextBrowserLanguageDetector)
+      .init({
+        lng: localStorage.getItem('i18nextLng') || 'es',
+        fallbackLng: 'es',
+        load: 'languageOnly',
+        backend: {
+          loadPath: '/locales/{{lng}}/translation.json'
+        }
+      }, function(err, t) {
+        // Siempre renderizar tras inicialización, cuando ya existen las funciones
+        if (typeof translateAll === 'function') translateAll();
+        if (typeof renderExperience === 'function') renderExperience();
+        if (typeof renderEducation === 'function') renderEducation();
       });
-      document.querySelectorAll('#lang-switcher button').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          const lang = this.getAttribute('data-lang');
-          i18next.changeLanguage(lang);
-        });
-      });
+    i18next.on('languageChanged', function() {
+      setTimeout(function() {
+        if (typeof translateAll === 'function') translateAll();
+        if (typeof renderExperience === 'function') renderExperience();
+        if (typeof renderEducation === 'function') renderEducation();
+      }, 100);
     });
-  window.i18nextInitialized = true;
-} else {
-  document.querySelectorAll('#lang-switcher button').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      const lang = this.getAttribute('data-lang');
-      i18next.changeLanguage(lang);
-    });
-  });
-}
+    window.i18nextInitialized = true;
+  }
+});
 function translateAll() {
   document.querySelectorAll('[data-i18n]').forEach(function(el) {
     el.innerHTML = i18next.t(el.getAttribute('data-i18n'));
   });
 }
+</script>
+
+<script>
+// Escucha el evento global de cambio de idioma y actualiza la página de forma reactiva
+window.addEventListener('languageChanged', function(e) {
+  if (typeof window.translateAll === 'function') {
+    window.translateAll();
+  } else {
+    location.reload();
+  }
+});
 </script>
 
 </body>

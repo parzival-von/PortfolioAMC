@@ -15,6 +15,47 @@
   transition: color 0.3s ease;
 }
 
+/* Dropdown de idioma en el header */
+#lang-dropdown .nav-link {
+  background: none;
+  border-radius: 0;
+  color: #fff;
+  font-weight: 400;
+  padding: 8px 16px;
+  border: none;
+  box-shadow: none;
+  transition: color 0.2s;
+}
+#lang-dropdown .nav-link:hover, #lang-dropdown .nav-link:focus {
+  background: none;
+  color: var(--color-primary);
+  border: none;
+}
+#lang-dropdown .fa-globe-americas {
+  font-size: 1.2em;
+  color: inherit;
+}
+#lang-dropdown .dropdown-menu {
+  background: rgba(24, 28, 41, 0.95);
+  border-radius: 16px;
+  min-width: 160px;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+  border: 1.5px solid var(--color-primary);
+  margin-top: 8px;
+}
+#lang-dropdown .dropdown-item {
+  color: #fff;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: background 0.2s, color 0.2s;
+}
+#lang-dropdown .dropdown-item.active,
+#lang-dropdown .dropdown-item:focus,
+#lang-dropdown .dropdown-item:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
 /* Diseño responsivo para el header */
 @media (max-width: 768px) {
   header {

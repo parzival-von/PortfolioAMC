@@ -91,11 +91,11 @@ function mostrarInfo(proy) {
       <div class="text-content">
         <h3>${proy.titulo}</h3>
         <p>${proy.descripcion}</p>
-        <h5>Programas utilizados:</h5>
+        <h5>${i18next.t('ar.programsTitle')}:</h5>
         <div class="skill-list d-flex flex-wrap gap-2">
           ${proy.programas.map(p => `<span class='badge-tech'>${iconos[p] || ''} ${p}</span>`).join(' ')}
         </div>
-        <a href="${proy.enlace}" target="_blank" class="btn btn-primary mt-2">Ver Proyecto</a>
+        <a href="${proy.enlace}" target="_blank" class="btn btn-primary mt-2">${i18next.t('ar.seeProject')}</a>
       </div>
       <div class="media-content">
         <iframe src="https://galactic-assault.vercel.app" width="100%" height="600" style="border: none;" allowfullscreen></iframe>
@@ -114,11 +114,11 @@ function mostrarInfo(proy) {
       <div class="text-content">
         <h3>${proy.titulo}</h3>
         <p>${proy.descripcion}</p>
-        <h5>Programas utilizados:</h5>
+        <h5>${i18next.t('ar.programsTitle')}:</h5>
         <div class="skill-list d-flex flex-wrap gap-2">
           ${proy.programas.map(p => `<span class='badge-tech'>${iconos[p] || ''} ${p}</span>`).join(' ')}
         </div>
-        <a href="${proy.enlace}" target="_blank" class="btn btn-primary mt-2">Ver Proyecto</a>
+        <a href="${proy.enlace}" target="_blank" class="btn btn-primary mt-2">${i18next.t('ar.seeProject')}</a>
       </div>
       <div class="media-content">
         <iframe src="https://asiercorona.es/wordpress14/" width="100%" height="600" style="border: none;" allowfullscreen></iframe>
@@ -140,11 +140,11 @@ function mostrarInfo(proy) {
       <div class="text-content">
         <h3>${proy.titulo}</h3>
         <p>${proy.descripcion}</p>
-        <h5>Programas utilizados:</h5>
+        <h5>${i18next.t('ar.programsTitle')}:</h5>
         <div class="skill-list d-flex flex-wrap gap-2">
           ${proy.programas.map(p => `<span class='badge-tech'>${iconos[p] || ''} ${p}</span>`).join(' ')}
         </div>
-        <a href="${proy.enlace}" target="_blank" class="btn btn-primary mt-2">Ver Proyecto</a>
+        <a href="${proy.enlace}" target="_blank" class="btn btn-primary mt-2">${i18next.t('ar.seeProject')}</a>
       </div>
       <div class="media-content">
         <iframe src="https://notionappasier.netlify.app/" width="100%" height="600" style="border: none;" allowfullscreen></iframe>
@@ -181,7 +181,7 @@ function mostrarInfo(proy) {
     'Arduino': '<i class="fas fa-microchip"></i>',
     'Sketch': '<i class="fas fa-pencil-ruler"></i>',
     'Vite': '<i class="fas fa-bolt"></i>',
-    'Corte CNC': '<i class="fas fa-cogs"></i>', // O bien usar Iconify (láser, engranaje)
+    'CNC': '<i class="fas fa-cogs"></i>', // O bien usar Iconify (láser, engranaje)
 
     // Iconify (requiere <script src="https://code.iconify.design/3/iconify.min.js"></script>)
     'TailwindCSS': '<span class="iconify" data-icon="simple-icons:tailwindcss"></span>',
@@ -203,21 +203,28 @@ function mostrarInfo(proy) {
     <div class="text-content">
       <h3>${proy.titulo}</h3>
       <p>${proy.descripcion}</p>
-      
-      <h5>Programas utilizados:</h5>
+      <h5>${i18next.t('ar.programsTitle')}:</h5>
       <div class="skill-list d-flex flex-wrap gap-2">
         ${proy.programas.map(p => `<span class="badge-tech">${iconos[p] || ''} ${p}</span>`).join(' ')}
       </div>
-      <a href="${proy.enlace}" target="_blank" class="btn btn-primary mt-2">Ver Proyecto</a>
+      ${proy.enlace ? `<a href="${proy.enlace}" target="_blank" class="btn btn-primary mt-2">${i18next.t('ar.seeProject')}</a>` : ''}
     </div>
     <div class="media-content">
       <div class="mb-2">
         ${proy.media.imagenes.map(img => `<img src="${img}" class="img-fluid rounded mb-2 project-img-zoom" alt="">`).join("")}
       </div>
-      ${proy.media.video ? `<video controls width="100%" class="rounded">
-        <source src="${proy.media.video}" type="video/mp4">
-        Tu navegador no soporta videos HTML5.
-      </video>` : ''}
+      ${proy.media.video ?
+        (proy.titulo && proy.titulo.toLowerCase().includes('mitoia')
+          ? `<video muted playsinline autoplay loop width="100%" class="rounded" style="pointer-events:none;">
+              <source src="${proy.media.video}" type="video/mp4">
+              Tu navegador no soporta videos HTML5.
+            </video>`
+          : `<video controls width="100%" class="rounded">
+              <source src="${proy.media.video}" type="video/mp4">
+              Tu navegador no soporta videos HTML5.
+            </video>`
+        )
+      : ''}
     </div>
   `;
   // Añadir funcionalidad de zoom a las imágenes

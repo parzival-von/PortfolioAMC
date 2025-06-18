@@ -82,7 +82,9 @@
     "interactive": "Proyectos Interactivos",
     "web": "Diseño Web",
     "fabrication": "Fabricación Digital",
-    "photography": "Fotografía"
+    "photography": "Fotografía",
+    "programsTitle": "Programas utilizados",
+    "seeProject": "Ver Proyecto"
   },
   "projects": {
     "castellEmotion": {
@@ -121,5 +123,10 @@
       "title": "Instagram Feed",
       "desc": "Mira mis últimas fotos en Instagram (@ottermarc):"
     }
+  },
+  "header": {
+    "lang_es": "Español",
+    "lang_en": "English",
+    "lang_ca": "Català"
   }
 }

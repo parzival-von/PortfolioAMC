@@ -122,4 +122,15 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     });
+
+    i18next.init({
+        lng: localStorage.getItem('i18nextLng') || 'es',
+        fallbackLng: 'es',
+        load: 'languageOnly', // Fuerza a usar solo el código corto (es, en, ca)
+        backend: {
+            loadPath: '/locales/{{lng}}/translation.json'
+        }
+    }, function(err, t) {
+        if (typeof translateAll === 'function') translateAll();
+    });
 });

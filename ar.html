@@ -51,11 +51,8 @@
     </main>
     <div id="footer" class="footer-index"></div>
 
-    <div id="lang-switcher" style="position: absolute; top: 10px; right: 20px; z-index: 1000;">
-      <button class="btn btn-sm btn-light" data-lang="es">ES</button>
-      <button class="btn btn-sm btn-light" data-lang="en">EN</button>
-      <button class="btn btn-sm btn-light" data-lang="ca">CA</button>
-    </div>
+    <!-- Selector de idioma global, visible SIEMPRE en todas las páginas -->
+    <!-- Elimina el selector de idioma global redundante, ya que ahora está integrado en el header como dropdown -->
     
     <script>
       // Detecta la ruta relativa correcta para el header
@@ -170,14 +167,14 @@
           .use(i18nextHttpBackend)
           .use(i18nextBrowserLanguageDetector)
           .init({
+            lng: localStorage.getItem('i18nextLng') || 'es',
             fallbackLng: 'es',
-            debug: false,
+            load: 'languageOnly',
             backend: {
-              loadPath: 'locales/{{lng}}/translation.json',
-            },
-            load: 'languageOnly', // <-- Añadido para evitar 404 con es-ES
+              loadPath: '/locales/{{lng}}/translation.json'
+            }
           }, function(err, t) {
-            translateAll();
+            if (typeof translateAll === 'function') translateAll();
             updateLangSwitcherActive();
             i18next.on('languageChanged', function() {
               setTimeout(function() {
@@ -229,6 +226,16 @@
           el.innerHTML = i18next.t(el.getAttribute('data-i18n'));
         });
       }
+    </script>
+    <script>
+      // Escucha el evento global de cambio de idioma y actualiza la página de forma reactiva
+      window.addEventListener('languageChanged', function(e) {
+        if (typeof window.translateAll === 'function') {
+          window.translateAll();
+        } else {
+          location.reload();
+        }
+      });
     </script>
   </body>
   

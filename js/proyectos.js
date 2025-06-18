@@ -121,14 +121,16 @@ function getProyectosPorTema() {
           "JavaScript",
           "p5.js",
           "Impresión 3D",
-          "Corte CNC"
+          "CNC"
         ],
-        "enlace": "img/lamparaModular/Proyectos de impresión 3D (Presentación).pdf",
+        // No hay enlace disponible para este proyecto
+        "enlace": "",
         "media": {
           "imagenes": [
             "img/mitoIA/mitoIA2.jpeg",
             "img/mitoIA/mitoIA1.jpeg"
-          ]
+          ],
+          "video": "img/mitoIA/mitoIA.mp4"
         }
       }
     ],
